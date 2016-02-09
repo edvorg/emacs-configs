@@ -16,8 +16,10 @@
 (req-package cider
   :require (clojure-mode eldoc)
   :commands cider-mode cider-jack-in-clojurescript
-  :init (progn (req-package-hooks-add-execute 'clojure-mode #'cider-mode)
-			   (req-package-hooks-add-execute 'cider-mode #'eldoc-mode))
+  :init
+  (req-package-hooks-add-execute 'clojure-mode #'cider-mode)
+  (req-package-hooks-add-execute 'cider-mode #'eldoc-mode)
+  (setq cider-auto-jump-to-error 'errors-only)
   :config
   (setq nrepl-log-messages t)
   (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript))
