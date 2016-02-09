@@ -162,13 +162,19 @@
   :init
   (add-to-list 'my-random-themes 'hc-zenburn))
 
+(req-package suscolors-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'suscolors))
+
 (req-package plan9-theme
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'plan9
              (lambda ()
-               (add-hook 'org-mode-hook
+               (req-package-hooks-add-execute 'org-mode
                          (lambda ()
                            (set-face-attribute 'org-level-1 nil :family "menlo")
                            (set-face-attribute 'org-level-1 nil :underline nil)
