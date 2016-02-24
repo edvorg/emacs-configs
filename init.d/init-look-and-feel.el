@@ -29,17 +29,6 @@
 (req-package beacon
   :config (beacon-mode))
 
-;; pretty lambda
-
-;; (req-package pretty-lambdada
-;;   :config
-;;   (pretty-lambda-for-modes 1))
-
-;; pretty symbols mode
-
-;; (if (has-emacs-version 24 4)
-;;     (global-prettify-symbols-mode 1))
-
 ;; customizations
 
 (req-package menu-bar
