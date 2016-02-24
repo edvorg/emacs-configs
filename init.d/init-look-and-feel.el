@@ -143,12 +143,12 @@
   :init
   (add-theme 'cyberpunk
              (lambda ()
-               (add-hook 'org-mode-hook
-                         (lambda ()
-                           (normalize-faces '(org-level-1
-                                              org-level-2
-                                              org-level-3
-                                              org-document-title)))))))
+               (req-package-hooks-add-execute 'org-mode
+                 (lambda ()
+                   (normalize-faces '(org-level-1
+                                      org-level-2
+                                      org-level-3
+                                      org-document-title)))))))
 
 (req-package mbo70s-theme
   :require smart-mode-line
