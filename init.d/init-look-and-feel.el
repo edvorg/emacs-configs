@@ -145,6 +145,12 @@
   :init
   (add-to-list 'my-random-themes 'mbo70s))
 
+(req-package yoshi-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'yoshi))
+
 (req-package hc-zenburn-theme
   :require smart-mode-line
   :defer t
