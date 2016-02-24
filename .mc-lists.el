@@ -38,6 +38,7 @@
         insert-register
         keyboard-quit
         kill-region
+        magit-discard
         magit-stage
         markdown-exdent-or-delete
         move-text-down
@@ -45,8 +46,8 @@
         nameless-insert-name
         org-agenda-next-line
         org-agenda-previous-line
-        org-agenda-priority-up
         org-agenda-priority-down
+        org-agenda-priority-up
         org-agenda-schedule
         org-beginning-of-line
         org-end-of-line
