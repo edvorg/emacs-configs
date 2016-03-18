@@ -309,4 +309,10 @@
 (req-package rectangle-utils
   :bind ("C-x r e" . extend-rectangle-to-end))
 
+(req-package prodigy
+  :commands prodigy)
+
+(req-package symon
+  :config (symon-mode 1))
+
 (provide 'init-ext)
