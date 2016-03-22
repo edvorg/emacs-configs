@@ -163,6 +163,12 @@
   :init
   (add-to-list 'my-random-themes 'suscolors))
 
+(req-package danneskjold-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-to-list 'my-random-themes 'danneskjold))
+
 (req-package plan9-theme
   :require smart-mode-line
   :defer t
