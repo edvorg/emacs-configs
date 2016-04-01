@@ -272,6 +272,8 @@
 
 (req-package diff-hl
   :require smartrep
-  :config (global-diff-hl-mode 1))
+  :config
+  (global-diff-hl-mode 1)
+  (global-set-key (kbd "C-c C-r") 'diff-hl-revert-hunk))
 
 (provide 'init-look-and-feel)
