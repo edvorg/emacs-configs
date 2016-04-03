@@ -98,4 +98,8 @@
   :commands helm-themes
   :require helm)
 
+;; org rifle
+
+(req-package helm-org-rifle)
+
 (provide 'init-helm)
