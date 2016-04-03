@@ -10,8 +10,7 @@
   (emr-initialize))
 
 (req-package litable
-  :commands (litable-mode litable-accept-as-pure)
-  :init (req-package-hooks-add-execute 'lisp-interaction-mode (lambda () (litable-mode 1))))
+  :commands litable-mode)
 
 (req-package eldoc
   :commands eldoc-mode
