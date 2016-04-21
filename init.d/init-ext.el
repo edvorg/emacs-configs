@@ -1,5 +1,9 @@
 (require 'req-package)
 
+(req-package shift-number
+  :bind (("C-M-<up>" . shift-number-up)
+         ("C-M-<down>" . shift-number-down)))
+
 (req-package twittering-mode
   :commands twit
   :config (progn (setq twittering-icon-mode t)
