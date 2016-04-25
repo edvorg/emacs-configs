@@ -8,6 +8,10 @@
   ;; FIXME install this fonts somehow first
   (set-default-font "SourceCodePro-10" t)
   ;; aur interface
-  (req-package aurel :commands aurel-package-search))
+  (req-package aurel :commands aurel-package-search)
+
+  (req-package helm-systemd
+    :require helm
+    :commands helm-systemd))
 
 (provide 'init-linux)
