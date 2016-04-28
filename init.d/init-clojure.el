@@ -8,7 +8,7 @@
 
 (req-package clojure-mode
   :mode (("clj\\'" . clojure-mode)
-         ("cljs\\'" . clojure-mode)
+         ("cljs\\'" . clojurescript-mode)
          (".lein-env\\'" . clojure-mode)))
 
 (req-package clojure-mode-extra-font-locking
