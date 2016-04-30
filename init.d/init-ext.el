@@ -317,6 +317,7 @@
   :commands prodigy)
 
 (req-package symon
+  :disabled t
   :config (symon-mode 1))
 
 (provide 'init-ext)
