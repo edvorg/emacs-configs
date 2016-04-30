@@ -70,7 +70,25 @@
 
 (defun normalize-faces (faces)
   (dolist (face faces)
-    (set-face-attribute face nil :height 1)))
+    (progn
+      (set-face-attribute face nil :family "menlo")
+      (set-face-attribute face nil :underline nil)
+      (set-face-attribute face nil :box nil)
+      (set-face-attribute face nil :height 1))))
+
+(defun normalize-org-faces ()
+  (eval-after-load 'org-faces
+    (normalize-faces '(org-level-1
+                       org-level-2
+                       org-level-3
+                       org-level-4
+                       org-level-5
+                       org-level-6
+                       org-level-7
+                       org-level-8
+                       org-todo
+                       org-done
+                       org-document-title))))
 
 (req-package soothe-theme
   :require smart-mode-line
@@ -132,12 +150,7 @@
   :init
   (add-theme 'cyberpunk
              (lambda ()
-               (req-package-hooks-add-execute 'org-mode
-                 (lambda ()
-                   (normalize-faces '(org-level-1
-                                      org-level-2
-                                      org-level-3
-                                      org-document-title)))))))
+               (normalize-org-faces))))
 
 (req-package mbo70s-theme
   :require smart-mode-line
@@ -175,18 +188,7 @@
   :init
   (add-theme 'plan9
              (lambda ()
-               (req-package-hooks-add-execute 'org-mode
-                         (lambda ()
-                           (set-face-attribute 'org-level-1 nil :family "menlo")
-                           (set-face-attribute 'org-level-1 nil :underline nil)
-                           (set-face-attribute 'org-level-2 nil :family "menlo")
-                           (set-face-attribute 'org-level-2 nil :underline nil)
-                           (set-face-attribute 'org-level-3 nil :family "menlo")
-                           (set-face-attribute 'org-level-3 nil :underline nil)
-                           (normalize-faces '(org-level-1
-                                              org-level-2
-                                              org-level-3
-                                              org-document-title)))))))
+               (normalize-org-faces))))
 
 (req-package sublime-themes
   :require smart-mode-line
