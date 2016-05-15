@@ -55,6 +55,7 @@
 
 (require-package 'req-package)
 (require 'req-package)
+(req-package--log-set-level 'trace)
 
 ;; init.d
 
