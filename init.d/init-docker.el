@@ -6,7 +6,6 @@
 (req-package docker
   :commands docker-ps docker-start docker-stop)
 
-(req-package docker-tramp
-  :require tramp)
+(req-package docker-tramp)
 
 (provide 'init-docker)
