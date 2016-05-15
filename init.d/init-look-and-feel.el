@@ -74,7 +74,7 @@
       (set-face-attribute face nil :family "menlo")
       (set-face-attribute face nil :underline nil)
       (set-face-attribute face nil :box nil)
-      (set-face-attribute face nil :height 1))))
+      (set-face-attribute face nil :height 1.0))))
 
 (defun normalize-org-faces ()
   (eval-after-load 'org-faces
