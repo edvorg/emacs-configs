@@ -6,7 +6,7 @@
                   (lambda (url &rest args)
                     (call-process-shell-command "xdg-open" nil 0 nil url))))
   ;; FIXME install this fonts somehow first
-  (set-default-font "SourceCodePro-10" t)
+  (set-default-font "SourceCodePro Semi-Bold 11" t)
   ;; aur interface
   (req-package aurel :commands aurel-package-search)
 
