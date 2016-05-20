@@ -164,12 +164,6 @@
   :init
   (add-theme 'yoshi))
 
-(req-package hc-zenburn-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'hc-zenburn))
-
 (req-package suscolors-theme
   :require smart-mode-line
   :defer t
