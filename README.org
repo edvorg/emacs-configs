@@ -4,7 +4,7 @@
   This configuration tries to keep cannonical emacs behaviour, so any emacs familiar user could use it.
 
   It has no =evil= or other radical stuff. It also extends functionality by replacing
-  cannonical keybinding with alternative extensions doing the same thing, so user would be never lost.
+  canonical keybinding with alternative extensions doing the same thing, so user would be never lost.
 
   This configuration uses =req-package= system that automatically installs packages on load.
 
