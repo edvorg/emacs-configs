@@ -9,7 +9,7 @@
   :commands sbt-start)
 
 (req-package ensime
-  :require (scala-mode auto-complete)
+  :require scala-mode
   :config (req-package-hooks-add-execute 'scala-mode 'ensime-scala-mode-hook))
 
 (provide 'init-scala)
