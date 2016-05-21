@@ -94,55 +94,55 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'soothe))
+  (add-theme 'soothe))
 
 (req-package gotham-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'gotham))
+  (add-theme 'gotham))
 
 (req-package gruvbox-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'gruvbox))
+  (add-theme 'gruvbox))
 
 (req-package firebelly-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'firebelly))
+  (add-theme 'firebelly))
 
 (req-package darktooth-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'darktooth))
+  (add-theme 'darktooth))
 
 (req-package hc-zenburn-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'hc-zenburn))
+  (add-theme 'hc-zenburn))
 
 (req-package dracula-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'dracula))
+  (add-theme 'dracula))
 
 (req-package reykjavik-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'reykjavik))
+  (add-theme 'reykjavik))
 
 (req-package jazz-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'jazz))
+  (add-theme 'jazz))
 
 (req-package cyberpunk-theme
   :require smart-mode-line
@@ -156,31 +156,31 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'mbo70s))
+  (add-theme 'mbo70s))
 
 (req-package yoshi-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'yoshi))
+  (add-theme 'yoshi))
 
 (req-package hc-zenburn-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'hc-zenburn))
+  (add-theme 'hc-zenburn))
 
 (req-package suscolors-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'suscolors))
+  (add-theme 'suscolors))
 
 (req-package danneskjold-theme
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'danneskjold))
+  (add-theme 'danneskjold))
 
 (req-package plan9-theme
   :require smart-mode-line
@@ -194,11 +194,11 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-to-list 'my-random-themes 'spolsky)
-  (add-to-list 'my-random-themes 'graham)
-  (add-to-list 'my-random-themes 'odersky)
-  (add-to-list 'my-random-themes 'junio)
-  (add-to-list 'my-random-themes 'wilson))
+  (add-theme 'spolsky)
+  (add-theme 'graham)
+  (add-theme 'odersky)
+  (add-theme 'junio)
+  (add-theme 'wilson))
 
 (defun select-theme (&optional theme)
   (interactive)
