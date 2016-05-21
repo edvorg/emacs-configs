@@ -164,11 +164,8 @@
 ;; scratch persist
 
 (req-package scratch-persist
-  :require (eldoc hl-defined scratch-ext))
-
-;; scratch ext
-
-(req-package scratch-ext)
+  :require (eldoc hl-defined scratch-ext)
+  :init (setq scratch-persist-file "~/Dropbox/emacs/scratch.el"))
 
 ;; indentation
 
