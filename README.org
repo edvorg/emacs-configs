@@ -1,13 +1,20 @@
 * .emacs.d
+  Yet another starter kit for emacs.
 
-init.el and other stuff for my emacs environment.
-use it as a starter kit for your own configuration.
+  This configuration tries to keep cannonical emacs behaviour, so any emacs familiar user could use it.
 
-it's self bootstrapping.
+  It has no =evil= or other radical stuff. It also extends functionality by replacing
+  cannonical keybinding with alternative extensions doing the same thing, so user would be never lost.
 
-#+BEGIN_SRC shell
-git clone http://github.com/edvorg/emacs-configs ~/.emacs.d
-emacs
-#+END_SRC
+  This configuration uses =req-package= system that automatically installs packages on load.
 
-all required packages will be installed and configured automatically.
+  First run is going to take =long time= as it has to download all required packages.
+
+  After that, load time is about =5 seconds= on my ssd machine.
+
+  To get started just clone this repo to your =.emacs.d= and run emacs.
+
+  #+BEGIN_SRC shell
+  git clone http://github.com/edvorg/emacs-configs ~/.emacs.d
+  emacs
+  #+END_SRC
