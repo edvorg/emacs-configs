@@ -320,4 +320,7 @@
   :disabled t
   :config (symon-mode 1))
 
+(req-package fireplace
+  :commands fireplace)
+
 (provide 'init-ext)
