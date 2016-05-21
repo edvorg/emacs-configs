@@ -328,6 +328,7 @@
   (setf url-queue-timeout 60)
   (load "~/Dropbox/emacs/elfeed-feeds.el" t)
   (setq elfeed-db-directory "~/Dropbox/emacs/elfeed")
-  (setq elfeed-enclosure-default-dir "~/Dropbox/emacs"))
+  (setq elfeed-enclosure-default-dir "~/Dropbox/emacs")
+  (setq elfeed-search-filter "@1-months-ago +unread"))
 
 (provide 'init-ext)
