@@ -18,3 +18,7 @@
   git clone https://github.com/edvorg/emacs-configs.git ~/.emacs.d
   emacs
   #+END_SRC
+
+  For customization add your =*.el= files to =init.d= and it will be loaded by =load-dir= extension.
+
+  For additional information refer [[https://github.com/edvorg/req-package.git][req-package]] readme.
