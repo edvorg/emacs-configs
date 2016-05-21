@@ -31,10 +31,13 @@
 ;; visual regexp
 
 (req-package visual-regexp
-  :require multiple-cursors
-  :config (progn (define-key global-map (kbd "C-c r") 'vr/replace)
-                 (define-key global-map (kbd "C-c q") 'vr/query-replace)
-                 (define-key global-map (kbd "C-c m") 'vr/mc-mark)))
+  :require multiple-cursors visual-regexp-steroids
+  :bind (("C-c r" . vr/replace)
+         ("C-c q" . vr/query-replace)
+         ("C-c m" . vr/mc-mark)
+         ;; :map esc-map
+         ("C-M-r" . vr/isearch-backward)
+         ("C-M-s" . vr/isearch-forward)))
 
 ;; ignored folders
 
