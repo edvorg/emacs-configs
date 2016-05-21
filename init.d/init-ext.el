@@ -6,15 +6,12 @@
 
 (req-package twittering-mode
   :commands twit
-  :config (progn (setq twittering-icon-mode t)
-                 (setq twittering-use-icon-storage t)
-                 (setq twittering-timeline-spec-alias '(("Clojure" . "edvorg/clojure")
-                                                        ("BMX" . "edvorg/bmx1")
-                                                        ("Emacs" . "edvorg/emacs1")
-                                                        ("Guys" . "edvorg/guys")
-                                                        ("JVM" . "edvorg/jvm")))
-                 (setq twittering-use-master-password t)
-                 (twittering-enable-unread-status-notifier)))
+  :config
+  (setq twittering-icon-mode t)
+  (setq twittering-use-icon-storage t)
+  (load "~/Dropbox/emacs/twittering-custom.el" t)
+  (setq twittering-use-master-password t)
+  (twittering-enable-unread-status-notifier))
 
 (req-package multifiles
   :bind ("C-!" . mf/mirror-region-in-multifile))
@@ -331,7 +328,7 @@
 (req-package elfeed
   :commands elfeed
   :config
-  (load-file "~/Dropbox/emacs/elfeed-feeds.el")
+  (load "~/Dropbox/emacs/elfeed-feeds.el" t)
   (setq elfeed-db-directory "~/Dropbox/emacs/elfeed")
   (setq elfeed-enclosure-default-dir "~/Dropbox/emacs"))
 
