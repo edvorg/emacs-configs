@@ -13,6 +13,8 @@
            ;; (set-default-font "Liberation Mono-12" t)
            ;; (set-default-font "Oxygen Mono-12" t)
            ;; (set-default-font "Anonymous-12" t)
-           (set-default-font "Source Code Pro-12" t)))
+           (condition-case-unless-debug e
+               (set-default-font "SourceCodePro Semi-Bold 12" t)
+             (error (message "can not load SourceCodePro font : %s" e)))))
 
 (provide 'init-darwin)
