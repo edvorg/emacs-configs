@@ -15,6 +15,6 @@
   To get started just clone this repo to your =.emacs.d= and run emacs.
 
   #+BEGIN_SRC shell
-  git clone http://github.com/edvorg/emacs-configs ~/.emacs.d
+  git clone https://github.com/edvorg/emacs-configs.git ~/.emacs.d
   emacs
   #+END_SRC
