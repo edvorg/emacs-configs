@@ -328,4 +328,11 @@
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x"))
   (guide-key-mode 1))
 
+(req-package elfeed
+  :commands elfeed
+  :config
+  (load-file "~/Dropbox/emacs/elfeed-feeds.el")
+  (setq elfeed-db-directory "~/Dropbox/emacs/elfeed")
+  (setq elfeed-enclosure-default-dir "~/Dropbox/emacs"))
+
 (provide 'init-ext)

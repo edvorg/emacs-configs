@@ -18,7 +18,6 @@ tramp
 saved-packages
 /session.*
 /.cask/
-/custom.el
 /.litable-lists.el
 /elnode/
 /clang-include-paths.jar
