@@ -20,6 +20,7 @@
 (req-package lisp-mode
   :require flycheck
   :commands lisp-mode
+  :bind (("C-c C-k" . eval-buffer))
   :config (req-package-hooks-add-execute 'emacs-lisp-mode
             (lambda () (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc)))))
 
