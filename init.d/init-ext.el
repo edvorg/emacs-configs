@@ -127,14 +127,11 @@
 ;; multiple cursors
 
 (req-package multiple-cursors
-  :commands (mc/edit-lines
-             mc/mark-previous-like-this
-             mc/mark-next-like-this
-             mc/mark-all-like-this)
-  :init (progn (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-               (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-               (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-               (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this)))
+  :init
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-c C-.") 'mc/mark-all-like-this))
 
 ;; ant
 
