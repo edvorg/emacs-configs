@@ -278,10 +278,6 @@
 (global-set-key (kbd "s-]") (lambda () (interactive) (other-window 1)))
 (global-set-key (kbd "s-[") (lambda () (interactive) (other-window -1)))
 
-;; ru keys
-
-(req-package-hooks-add-execute 'find-file (lambda () (setq default-input-method 'russian-computer)))
-
 ;; expand region
 
 (req-package expand-region
