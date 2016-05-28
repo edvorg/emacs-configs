@@ -1,7 +1,8 @@
 (require 'req-package)
 
+(load "~/Dropbox/emacs/circe-custom.el" t)
+
 (req-package circe
-  :config
-  (load "~/Dropbox/emacs/circe-custom.el" t))
+  :commands circe)
 
 (provide 'init-irc)
