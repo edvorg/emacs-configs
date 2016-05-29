@@ -60,8 +60,8 @@
 ;; init.d
 
 (random t)
-(req-package-force load-dir
-  :defer 1
+(req-package load-dir
+  :force true
   :init
   (setq force-load-messages nil)
   (setq load-dir-debug nil)
