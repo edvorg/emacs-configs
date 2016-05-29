@@ -4,16 +4,14 @@
 
 (req-package haskell-mode
   :mode (("\\.hs$" . haskell-mode)
-         (".xmobarrc$" . haskell-mode))
+         (".xmobarrc$" . haskell-mode)
+         ("\\.cabal$" . haskell-cabal-mode))
   :config
   (setq haskell-tags-on-save t)
   (setq haskell-process-type 'cabal-repl)
   (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-doc-mode)
   (req-package-hooks-add-execute 'haskell-mode 'turn-on-haskell-indentation)
   (req-package-hooks-add-execute 'haskell-mode (lambda () (ghc-init))))
-
-(req-package cabal-mode
-  :mode ("\\.cabal$" . cabal-mode))
 
 (req-package company-ghc
   :require haskell-mode company
