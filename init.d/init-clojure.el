@@ -18,8 +18,8 @@
   :require (clojure-mode eldoc)
   :commands cider-mode cider-jack-in-clojurescript
   :init
-  (req-package-hooks-add-execute 'clojure-mode #'cider-mode)
-  (req-package-hooks-add-execute 'cider-mode #'eldoc-mode)
+  (add-hook-exec 'clojure-mode #'cider-mode)
+  (add-hook-exec 'cider-mode #'eldoc-mode)
   (setq cider-auto-jump-to-error 'errors-only)
   :config
   (setq nrepl-log-messages t)
@@ -32,14 +32,14 @@
 (req-package cider-profile
   :require cider
   :commands cider-profile-mode
-  :init (progn (req-package-hooks-add-execute 'cider-mode 'cider-profile-mode)
-               (req-package-hooks-add-execute 'cider-repl-mode 'cider-profile-mode)))
+  :init (progn (add-hook-exec 'cider-mode 'cider-profile-mode)
+               (add-hook-exec 'cider-repl-mode 'cider-profile-mode)))
 
 (req-package clj-refactor
   :require cider
   :commands clj-refactor-mode
   :init
-  (req-package-hooks-add-execute 'cider-mode #'clj-refactor-mode)
+  (add-hook-exec 'cider-mode #'clj-refactor-mode)
   (setq cljr-warn-on-eval nil))
 
 (req-package cljr-helm
@@ -53,13 +53,13 @@
 (req-package typed-clojure-mode
   :require clojure-mode
   :commands typed-clojure-mode
-  :init (req-package-hooks-add-execute 'clojure-mode 'typed-clojure-mode))
+  :init (add-hook-exec 'clojure-mode 'typed-clojure-mode))
 
 (req-package flycheck-clojure
   :disabled t
   :require (clojure-mode flycheck)
   :config
-  (req-package-hooks-add-execute 'clojure-mode
+  (add-hook-exec 'clojure-mode
     (lambda ()
       ;; currently not working with cljs
       (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)

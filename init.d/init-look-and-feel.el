@@ -13,7 +13,7 @@
 ;; highlight number in code
 
 (req-package highlight-numbers
-  :config (req-package-hooks-add-execute 'find-file (lambda () (highlight-numbers-mode 1))))
+  :config (add-hook-exec 'find-file (lambda () (highlight-numbers-mode 1))))
 
 ;; some very useful extension
 
@@ -247,7 +247,7 @@
 
 (req-package fic-mode
   :config
-  (req-package-hooks-add-execute 'prog-mode (lambda () (fic-mode 1))))
+  (add-hook-exec 'prog-mode (lambda () (fic-mode 1))))
 
 (req-package rainbow-delimiters
   :require clojure-mode
@@ -261,8 +261,8 @@
                (custom-set-faces '(rainbow-delimiters-depth-6-face ((t (:inherit org-level-6)))))
                (custom-set-faces '(rainbow-delimiters-depth-7-face ((t (:inherit org-level-7)))))
                (custom-set-faces '(rainbow-delimiters-depth-8-face ((t (:inherit org-level-8)))))
-               (req-package-hooks-add-execute 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1)))
-               (req-package-hooks-add-execute 'clojure-mode (lambda () (rainbow-delimiters-mode 1)))))
+               (add-hook-exec 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1)))
+               (add-hook-exec 'clojure-mode (lambda () (rainbow-delimiters-mode 1)))))
 
 ;; diff highlight
 

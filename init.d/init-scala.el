@@ -10,6 +10,6 @@
 
 (req-package ensime
   :require scala-mode
-  :config (req-package-hooks-add-execute 'scala-mode 'ensime-scala-mode-hook))
+  :config (add-hook-exec 'scala-mode 'ensime-scala-mode-hook))
 
 (provide 'init-scala)

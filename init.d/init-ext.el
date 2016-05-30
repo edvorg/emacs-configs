@@ -67,7 +67,7 @@
 
 ;; delete trailing whitespaces before saving some buffer
 
-(req-package-hooks-add-execute 'before-save 'delete-trailing-whitespace)
+(add-hook-exec 'before-save 'delete-trailing-whitespace)
 
 ;; temp file
 
@@ -168,7 +168,7 @@
 
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(req-package-hooks-add-execute 'find-file (lambda () (setq indent-tabs-mode nil)))
+(add-hook-exec 'find-file (lambda () (setq indent-tabs-mode nil)))
 (electric-indent-mode 1)
 
 ;; show keystrockes early

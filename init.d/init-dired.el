@@ -8,8 +8,8 @@
   :config (progn (define-key dired-mode-map (kbd "M-i") 'helm-swoop)
 				 (define-key dired-mode-map (kbd "M-RET") 'dired-find-file-other-window)
 				 (key-chord-define dired-mode-map "qq" 'dired-up-directory)
-				 (req-package-hooks-add-execute 'dired-mode (lambda () (auto-revert-mode 1)))
-				 (req-package-hooks-add-execute 'dired-mode (lambda () (diff-hl-dired-mode 1)))))
+				 (add-hook-exec 'dired-mode (lambda () (auto-revert-mode 1)))
+				 (add-hook-exec 'dired-mode (lambda () (diff-hl-dired-mode 1)))))
 
 ;; sunrise commander
 

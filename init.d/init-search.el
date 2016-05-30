@@ -48,6 +48,6 @@
             (add-to-list 'grep-find-ignored-directories "elpa")
             (add-to-list 'grep-find-ignored-directories ".git")
             (add-to-list 'grep-find-ignored-directories ".svn")
-            (req-package-hooks-add-execute 'grep-mode (lambda () (toggle-truncate-lines 1)))))
+            (add-hook-exec 'grep-mode (lambda () (toggle-truncate-lines 1)))))
 
 (provide 'init-search)
