@@ -36,6 +36,7 @@
 ;; gdb
 
 (req-package gdb-mi
+  :loader :built-in
   :require cc-mode
   :config
   (setq gdb-many-windows t)
