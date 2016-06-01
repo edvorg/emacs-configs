@@ -79,6 +79,10 @@
 (req-package cljsbuild-mode
   :commands cljsbuild-start)
 
+(req-package kibit-helper
+  :commands kibit kibit-current-file
+  :bind (("C-x C-`" . kibit-accept-proposed-change)))
+
 (req-package sotclojure :disabled t)
 
 (provide 'init-clojure)
