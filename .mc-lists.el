@@ -29,6 +29,7 @@
         duplicate-thing
         electric-newline-and-maybe-indent
         emmet-expand-line
+        eval-last-sexp
         eval-print-last-sexp
         helm-maybe-exit-minibuffer
         helm-show-kill-ring
