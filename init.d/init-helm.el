@@ -3,13 +3,12 @@
 ;; helm
 
 (req-package helm
-  :require key-chord
-  :config (progn (require 'helm-config)
-				 (define-key global-map (kbd "C-x C-b") 'helm-buffers-list)
-				 (key-chord-define-global ";l" 'helm-bookmarks)
-				 (global-set-key (kbd "C-c y") 'helm-show-kill-ring)
-				 (global-set-key (kbd "C-x C-r") 'helm-recentf)
-				 (global-set-key (kbd "C-x r l") 'helm-bookmarks)))
+  :chords ((";l" . helm-bookmarks))
+  :bind (("C-x C-b" . helm-buffers-list)
+         ("C-c y" . helm-show-kill-ring)
+         ("C-x C-r" . helm-recentf)
+         ("C-x r l" . helm-bookmarks))
+  :config (require 'helm-config))
 
 ;; ace jump to helm item
 

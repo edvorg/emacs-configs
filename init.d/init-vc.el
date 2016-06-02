@@ -17,9 +17,8 @@
   (svn-status (find-upper-svn-root default-directory default-directory)))
 
 (req-package psvn
-  :require key-chord
   :commands svn-status
-  :init (key-chord-define-global ";s" 'upper-svn-status))
+  :chords ((";s" . upper-svn-status)))
 
 ;; use timemachine
 
@@ -28,13 +27,10 @@
 ;; magit
 
 (req-package magit
-  :require key-chord
-  :commands magit-status
-  :init (progn (key-chord-define-global ";m" 'magit-status)
-               (setq magit-last-seen-setup-instructions "1.4.0")
-               (setq magit-auto-revert-mode t))
-  :config (progn (key-chord-define magit-log-mode-map ";j" "n")
-                 (key-chord-define magit-log-mode-map ";k" "p")))
+  :chords ((";m" . magit-status))
+  :init
+  (setq magit-last-seen-setup-instructions "1.4.0")
+  (setq magit-auto-revert-mode t)())
 
 ;; git flow
 

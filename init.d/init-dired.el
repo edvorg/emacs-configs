@@ -4,12 +4,15 @@
 
 (req-package dired
   :commands dired
-  :require (key-chord autorevert diff-hl)
-  :config (progn (define-key dired-mode-map (kbd "M-i") 'helm-swoop)
-				 (define-key dired-mode-map (kbd "M-RET") 'dired-find-file-other-window)
-				 (key-chord-define dired-mode-map "qq" 'dired-up-directory)
-				 (add-hook-exec 'dired-mode (lambda () (auto-revert-mode 1)))
-				 (add-hook-exec 'dired-mode (lambda () (diff-hl-dired-mode 1)))))
+  :require autorevert diff-hl
+  :chords (:map dired-mode-map
+                ("qq" . dired-up-directory))
+  :bind (:map dired-mode-map
+              ("M-i" . helm-swoop)
+              ("M-RET" . dired-find-file-other-window))
+  :config
+  (add-hook-exec 'dired-mode (lambda () (auto-revert-mode 1)))
+  (add-hook-exec 'dired-mode (lambda () (diff-hl-dired-mode 1))))
 
 ;; sunrise commander
 

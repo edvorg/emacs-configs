@@ -12,7 +12,6 @@
     'bash-completion-dynamic-complete))
 
 (req-package shell-pop
-  :require key-chord
   :bind ("M-\"" . shell-pop))
 
 (provide 'init-bash)

@@ -40,16 +40,25 @@
                    (package-install package)))
              (require package))))
 
-;; el-get
+;; use package
 
 (require-package 'use-package)
 (require 'use-package)
+
+;; el-get
+
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require-package 'el-get)
+(require 'el-get)
 (use-package el-get
   :config
   (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
   (el-get 'sync))
+
+;; chords
+
+(require-package 'use-package-chords)
+(require 'use-package-chords)
 
 ;; req-package
 

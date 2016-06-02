@@ -61,9 +61,7 @@
 ;; revertible delete other windows
 
 (req-package zygospore
-  :require key-chord
-  :commands zygospore-toggle-delete-other-windows
-  :init (key-chord-define-global ";1" 'zygospore-toggle-delete-other-windows))
+  :chords ((";1" . zygospore-toggle-delete-other-windows)))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -104,7 +102,6 @@
 ;; use fuzzy for M-x
 
 (req-package smex
-  :require key-chord
   :bind ("M-x" . smex)
   :config (smex-initialize))
 
@@ -120,9 +117,7 @@
 ;; paradox
 
 (req-package paradox
-  :require key-chord
-  :commands paradox-list-packages
-  :init (key-chord-define-global ";p" 'paradox-list-packages))
+  :chords ((";p" . paradox-list-packages)))
 
 ;; multiple cursors
 
@@ -212,9 +207,8 @@
 ;; switch window
 
 (req-package ace-window
-  :require key-chord
-  :bind ("C-x o" . ace-window)
-  :init (key-chord-define-global ";o" 'ace-window))
+  :chords ((";o" . ace-window))
+  :bind (("C-x o" . ace-window)))
 
 ;; ace jump mode
 
@@ -281,7 +275,6 @@
 ;; expand region
 
 (req-package expand-region
-  :require key-chord
   :bind ("M-=" . er/expand-region)
   :init (eval-after-load 'dired '(define-key dired-mode-map (kbd "M-=") 'er/expand-region)))
 

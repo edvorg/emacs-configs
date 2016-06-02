@@ -20,13 +20,11 @@
 	  (find-upper-vcs-root UPPER NEWACC))))
 
 (req-package projectile
-  :require key-chord
   :bind (("C-x f" . projectile-find-file)
          ("C-x d" . projectile-find-dir))
-  :config
-  (key-chord-define-global "xf" 'projectile-find-file)
-  (key-chord-define-global "xd" 'projectile-find-dir)
-  (projectile-global-mode))
+  :chords  (("xf" . projectile-find-file)
+            ("xd" . projectile-find-dir))
+  :config (projectile-global-mode))
 
 ;; visual regexp
 
