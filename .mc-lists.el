@@ -85,6 +85,8 @@
 (setq mc/cmds-to-run-once
       '(
         c-up-conditional
+        save-some-buffers
+        wgrep-finish-edit
         diff-hl-next-hunk
         end-of-buffer
         find-file-in-vcs-directory
