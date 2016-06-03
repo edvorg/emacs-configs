@@ -40,7 +40,7 @@
 ;; ignored folders
 
 (req-package grep
-  :defer 7
+  :defer 1
   :config (progn
             (add-to-list 'grep-find-ignored-directories "auto")
             (add-to-list 'grep-find-ignored-directories "elpa")
