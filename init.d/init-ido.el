@@ -1,15 +1,18 @@
 (require 'req-package)
 
-(req-package flx-ido
-  :require flx
+(req-package ido
   :bind (("C-x C-f" . ido-find-file))
   :chords (("xb" . ido-switch-buffer))
-  :config (progn (ido-mode 1)
-                 (ido-everywhere 1)
-                 (flx-ido-mode 1)
-                 ;; disable ido faces to see flx highlights.
-                 (setq ido-enable-flex-matching t)
-                 (setq ido-use-faces nil)))
+  :config
+  (ido-mode 1)
+  (ido-everywhere 1))
+
+(req-package flx-ido
+  :require flx ido
+  :config
+  (flx-ido-mode 1)
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil))
 
 (req-package ido-at-point
   :require ido
