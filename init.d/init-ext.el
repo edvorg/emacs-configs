@@ -237,7 +237,6 @@
 ;; smart parenthesis
 
 (req-package smartparens-config
-  :defer 2
   :require smartparens
   :config (progn (smartparens-global-mode t)
                  (smartparens-global-strict-mode t)
