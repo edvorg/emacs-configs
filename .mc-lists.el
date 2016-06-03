@@ -72,6 +72,7 @@
         sp-backward-delete-char
         sp-backward-kill-word
         sp-delete-char
+        sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-word
         transpose-words
@@ -85,12 +86,12 @@
 (setq mc/cmds-to-run-once
       '(
         c-up-conditional
-        save-some-buffers
-        wgrep-finish-edit
         diff-hl-next-hunk
         end-of-buffer
         find-file-in-vcs-directory
         handle-select-window
         helm-buffers-list
+        save-some-buffers
         switch-window
+        wgrep-finish-edit
         ))
