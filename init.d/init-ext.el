@@ -298,6 +298,11 @@
 (req-package fireplace
   :commands fireplace)
 
+(req-package keyfreq
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
+
 (req-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v"))
