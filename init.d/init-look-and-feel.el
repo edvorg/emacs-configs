@@ -74,9 +74,13 @@
       (set-face-attribute face nil :family "menlo")
       (set-face-attribute face nil :underline nil)
       (set-face-attribute face nil :box nil)
-      (set-face-attribute face nil :height 1.0))))
+      (set-face-attribute face nil :height 1.0)
+      (set-face-attribute face nil :width 'normal)
+      (set-face-attribute face nil :weight 'normal))))
 
-(defun normalize-org-faces ()
+(defun normalize-common-faces ()
+  (eval-after-load 'smartparens
+    (normalize-faces '(show-paren-match)))
   (eval-after-load 'org-faces
     (normalize-faces '(org-level-1
                        org-level-2
@@ -150,7 +154,7 @@
   :init
   (add-theme 'cyberpunk
              (lambda ()
-               (normalize-org-faces))))
+               (normalize-common-faces))))
 
 (req-package mbo70s-theme
   :require smart-mode-line
@@ -182,7 +186,7 @@
   :init
   (add-theme 'plan9
              (lambda ()
-               (normalize-org-faces))))
+               (normalize-common-faces))))
 
 (req-package sublime-themes
   :require smart-mode-line
