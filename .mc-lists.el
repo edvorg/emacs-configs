@@ -85,6 +85,7 @@
 
 (setq mc/cmds-to-run-once
       '(
+        ace-window
         c-up-conditional
         diff-hl-next-hunk
         end-of-buffer
