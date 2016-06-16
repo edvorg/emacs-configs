@@ -2,6 +2,7 @@
 
 ;; gist client
 
-(req-package gist :commands gist-list)
+(req-package gist
+  :bind (("<f8>" . gist-list)))
 
 (provide 'init-gist)
