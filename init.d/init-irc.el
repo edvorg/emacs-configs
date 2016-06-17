@@ -1,9 +1,7 @@
 (require 'req-package)
 
-(load "~/Dropbox/emacs/circe-custom.el" t)
-
 (req-package circe
-  :commands circe)
+  :config (load "~/Dropbox/emacs/circe-custom.el" t))
 
 (req-package helm-circe
   :require helm circe
