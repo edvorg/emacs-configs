@@ -66,6 +66,7 @@
         org-shiftleft
         org-shiftright
         org-yank
+        rectangle-mark-mode
         sgml-slash
         smex
         sp--self-insert-command
