@@ -303,6 +303,15 @@
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
 
+(req-package idle-highlight-mode
+  :config
+  (setq idle-highlight-idle-time 1.0)
+  (add-hook-exec 'emacs-lisp-mode 'idle-highlight-mode))
+
+(req-package idle-highlight-mode
+  :require clojure-mode
+  :config (add-hook-exec 'clojure-mode 'idle-highlight-mode))
+
 (req-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v"))
