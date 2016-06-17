@@ -312,6 +312,10 @@
   :require clojure-mode
   :config (add-hook-exec 'clojure-mode 'idle-highlight-mode))
 
+(req-package idle-highlight-mode
+  :require sgml-mode
+  :config (add-hook-exec 'sgml-mode 'idle-highlight-mode))
+
 (req-package guide-key
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v"))
