@@ -25,6 +25,10 @@
   (setq nrepl-log-messages t)
   (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript))
 
+(req-package helm-cider
+  :require cider helm
+  :config (helm-cider-mode t))
+
 (req-package slamhound
   :require cider
   :commands slamhound)
