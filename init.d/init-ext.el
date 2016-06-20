@@ -306,6 +306,7 @@
 (req-package idle-highlight-mode
   :config
   (setq idle-highlight-idle-time 1.0)
+  (set-face-attribute 'idle-highlight nil :inherit 'underline)
   (add-hook-exec 'emacs-lisp-mode 'idle-highlight-mode))
 
 (req-package idle-highlight-mode
