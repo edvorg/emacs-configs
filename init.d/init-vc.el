@@ -22,7 +22,8 @@
 
 ;; use timemachine
 
-(req-package git-timemachine)
+(req-package git-timemachine
+  :bind (("C-x v t" . git-timemachine)))
 
 ;; magit
 
