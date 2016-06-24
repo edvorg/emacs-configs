@@ -303,6 +303,9 @@
   (keyfreq-mode 1)
   (keyfreq-autosave-mode 1))
 
+(req-package neotree
+  :commands neotree)
+
 (req-package idle-highlight-mode
   :config
   (setq idle-highlight-idle-time 1.0)
