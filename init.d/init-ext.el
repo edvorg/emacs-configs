@@ -90,6 +90,9 @@
   :init (require 'google-translate-smooth-ui)
   :bind ("C-c t" . google-translate-smooth-translate))
 
+(req-package define-word
+  :bind ("C-c d" . define-word-at-point))
+
 ;; swith off some warnings
 
 (req-package warnings
