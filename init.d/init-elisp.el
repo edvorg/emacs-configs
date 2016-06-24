@@ -29,10 +29,6 @@
   :init (progn (add-hook-exec 'emacs-lisp-mode 'elisp-slime-nav-mode)
                (add-hook-exec 'lisp-interaction-mode 'elisp-slime-nav-mode)))
 
-(req-package nameless
-  :commands nameless-mode-from-hook
-  :init (add-hook-exec 'emacs-lisp-mode 'nameless-mode-from-hook))
-
 (req-package ert-modeline
   :commands ert-modeline-mode
   :init (add-hook-exec 'emacs-lisp-mode 'ert-modeline-mode))
