@@ -40,6 +40,10 @@
   :commands turn-on-magit-gitflow
   :init (add-hook-exec 'magit-mode 'turn-on-magit-gitflow))
 
+(req-package magit-gh-pulls
+  :require magit
+  :config (add-hook-exec 'magit-mode 'turn-on-magit-gh-pulls))
+
 ;; magit svn
 
 (req-package magit-svn :require magit)
