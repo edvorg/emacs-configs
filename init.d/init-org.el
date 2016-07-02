@@ -20,14 +20,9 @@
   :commands org-bullets-mode
   :init (add-hook-exec 'org-mode (lambda () (org-bullets-mode 1))))
 
-(req-package org-cliplink :require org
+(req-package org-cliplink
+  :require org
   :bind ("C-M-y" . org-cliplink))
-
-(req-package org-gcal :disabled t :require org)
-
-(req-package org-jira :require org)
-
-(req-package jira :commands jira-login)
 
 (req-package org-trello
   :disabled t
