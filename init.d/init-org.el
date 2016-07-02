@@ -30,4 +30,7 @@
   :commands org-trello-mode
   :init (add-hook-exec 'org-mode (lambda () (org-trello-mode 1))))
 
+(req-package org-dashboard
+  :commands org-dashboard-display)
+
 (provide 'init-org)
