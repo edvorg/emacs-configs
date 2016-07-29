@@ -41,6 +41,7 @@
         kill-region
         magit-discard
         magit-stage
+        mark-whole-buffer
         markdown-exdent-or-delete
         move-text-down
         move-text-up
@@ -66,6 +67,7 @@
         org-shiftleft
         org-shiftright
         org-yank
+        prog-indent-sexp
         rectangle-mark-mode
         sgml-slash
         smex
