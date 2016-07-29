@@ -310,9 +310,10 @@
   :commands neotree)
 
 (req-package idle-highlight-mode
+  :require org-faces
   :config
-  (setq idle-highlight-idle-time 1.0)
-  (set-face-attribute 'idle-highlight nil :inherit 'underline)
+  (setq idle-highlight-idle-time 0.5)
+  (set-face-attribute 'idle-highlight nil :inherit 'org-todo)
   (add-hook-exec 'emacs-lisp-mode 'idle-highlight-mode))
 
 (req-package idle-highlight-mode
