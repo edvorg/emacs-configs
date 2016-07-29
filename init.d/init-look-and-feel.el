@@ -254,19 +254,16 @@
   (add-hook-exec 'prog-mode (lambda () (fic-mode 1))))
 
 (req-package rainbow-delimiters
+  :commands rainbow-delimiters-mode
+  :init
+  (custom-set-variables '(rainbow-delimiters-max-face-count 8))
+  (add-hook-exec 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1))))
+
+(req-package rainbow-delimiters
   :require clojure-mode
   :commands rainbow-delimiters-mode
-  :init (progn (custom-set-variables '(rainbow-delimiters-max-face-count 8))
-               (custom-set-faces '(rainbow-delimiters-depth-1-face ((t (:inherit org-level-1)))))
-               (custom-set-faces '(rainbow-delimiters-depth-2-face ((t (:inherit org-level-2)))))
-               (custom-set-faces '(rainbow-delimiters-depth-3-face ((t (:inherit org-level-3)))))
-               (custom-set-faces '(rainbow-delimiters-depth-4-face ((t (:inherit org-level-4)))))
-               (custom-set-faces '(rainbow-delimiters-depth-5-face ((t (:inherit org-level-5)))))
-               (custom-set-faces '(rainbow-delimiters-depth-6-face ((t (:inherit org-level-6)))))
-               (custom-set-faces '(rainbow-delimiters-depth-7-face ((t (:inherit org-level-7)))))
-               (custom-set-faces '(rainbow-delimiters-depth-8-face ((t (:inherit org-level-8)))))
-               (add-hook-exec 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1)))
-               (add-hook-exec 'clojure-mode (lambda () (rainbow-delimiters-mode 1)))))
+  :init
+  (add-hook-exec 'clojure-mode (lambda () (rainbow-delimiters-mode 1))))
 
 ;; diff highlight
 
