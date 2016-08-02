@@ -7,9 +7,11 @@
   (setq explicit-shell-file-name "bash")
   (setq comint-process-echoes t)
   (add-hook-exec 'shell-mode 'shell-dynamic-complete-functions
-    'bash-completion-dynamic-complete)
+                 'bash-completion-dynamic-complete)
   (add-hook-exec 'shell-mode 'shell-command-complete-functions
-    'bash-completion-dynamic-complete))
+                 'bash-completion-dynamic-complete))
+
+(req-package company-shell)
 
 (req-package shell-pop
   :bind ("M-\"" . shell-pop))
