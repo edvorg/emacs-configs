@@ -3,6 +3,7 @@
 ;; ruby mode for rakefile
 
 (req-package ruby-mode
+  :loader :built-in
   :mode (("Rakefile\\'" . ruby-mode)
 		 ("rb\\'" . ruby-mode)))
 
