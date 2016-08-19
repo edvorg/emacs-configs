@@ -168,12 +168,6 @@
   :init
   (add-theme 'yoshi))
 
-(req-package suscolors-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'suscolors))
-
 (req-package danneskjold-theme
   :require smart-mode-line
   :defer t
