@@ -182,6 +182,12 @@
              (lambda ()
                (normalize-common-faces))))
 
+(req-package doom-themes
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'doom-molokai))
+
 (req-package sublime-themes
   :require smart-mode-line
   :defer t
