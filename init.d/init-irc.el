@@ -1,7 +1,9 @@
 (require 'req-package)
 
 (req-package circe
-  :config (load "~/Dropbox/emacs/circe-custom.el" t))
+  :config
+  (add-hook-exec 'circe-mode (lambda () (tracking-mode -1)))
+  (load "~/Dropbox/emacs/circe-custom.el" t))
 
 (req-package helm-circe
   :require helm circe
