@@ -329,6 +329,9 @@
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v"))
   (guide-key-mode 1))
 
+(req-package easy-kill
+  :config (global-set-key [remap kill-ring-save] 'easy-kill))
+
 (req-package elfeed
   :commands elfeed
   :config
