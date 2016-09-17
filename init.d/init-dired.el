@@ -28,4 +28,8 @@
 
 (req-package dired-open :require dired)
 
+(req-package dired-launch
+  :require dired
+  :init (dired-launch-enable))
+
 (provide 'init-dired)
