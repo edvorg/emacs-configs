@@ -25,12 +25,14 @@
         comment-dwim
         complete-symbol
         count-words-region
+        dired-do-chgrp
         downcase-region
         duplicate-thing
         electric-newline-and-maybe-indent
         emmet-expand-line
         eval-last-sexp
         eval-print-last-sexp
+        haskell-indentation-common-electric-command
         helm-maybe-exit-minibuffer
         helm-show-kill-ring
         hungry-delete-backward
@@ -74,6 +76,7 @@
         sp--self-insert-command
         sp-backward-delete-char
         sp-backward-kill-word
+        sp-backward-sexp
         sp-delete-char
         sp-forward-sexp
         sp-kill-hybrid-sexp
@@ -95,6 +98,7 @@
         find-file-in-vcs-directory
         handle-select-window
         helm-buffers-list
+        revert-buffer
         save-some-buffers
         switch-window
         wgrep-finish-edit
