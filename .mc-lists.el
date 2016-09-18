@@ -28,6 +28,7 @@
         dired-do-chgrp
         downcase-region
         duplicate-thing
+        easy-kill
         electric-newline-and-maybe-indent
         emmet-expand-line
         eval-last-sexp
