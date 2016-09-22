@@ -1,3 +1,5 @@
+;(package-initialize)
+
 (require 'package)
 
 ;; bootstrap utils
