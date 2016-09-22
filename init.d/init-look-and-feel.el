@@ -90,6 +90,7 @@
                        org-level-6
                        org-level-7
                        org-level-8
+                       org-tag
                        org-todo
                        org-done
                        org-document-title))))
@@ -111,12 +112,6 @@
   :defer t
   :init
   (add-theme 'gruvbox))
-
-(req-package firebelly-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'firebelly))
 
 (req-package darktooth-theme
   :require smart-mode-line
