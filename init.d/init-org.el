@@ -8,7 +8,7 @@
          ("C-'" . org-cycle-agenda-files)
          ("C-c b" . org-iswitchb))
   :config (progn (setq org-default-notes-file (concat org-directory "/notes.org"))
-                 (setq org-tags-column -90)
+                 (setq org-tags-column -110)
                  (setq org-capture-bookmark t)
                  (setq org-refile-use-outline-path 'file)
                  (setq org-startup-folded 'showeverything)
