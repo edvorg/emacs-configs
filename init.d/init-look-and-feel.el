@@ -81,6 +81,8 @@
 (defun normalize-common-faces ()
   (eval-after-load 'smartparens
     (normalize-faces '(show-paren-match)))
+  (eval-after-load 'idle-highlight-mode
+    (normalize-faces '(idle-highlight)))
   (eval-after-load 'org-faces
     (normalize-faces '(org-level-1
                        org-level-2
@@ -174,6 +176,15 @@
   :defer t
   :init
   (add-theme 'plan9
+             (lambda ()
+               (normalize-common-faces))))
+
+(req-package melancholy-theme
+  :disabled t ;; not yet ready https://github.com/techquila/melancholy-theme/issues/3
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'melancholy
              (lambda ()
                (normalize-common-faces))))
 
