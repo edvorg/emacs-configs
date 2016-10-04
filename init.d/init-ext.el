@@ -332,6 +332,9 @@
 (req-package easy-kill
   :config (global-set-key [remap kill-ring-save] 'easy-kill))
 
+(req-package podcaster
+  :config (setq podcaster-feeds-urls '("http://feeds.cognitect.com/cognicast/feed.rss")))
+
 (req-package elfeed
   :commands elfeed
   :config
