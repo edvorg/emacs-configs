@@ -171,6 +171,14 @@
   :init
   (add-theme 'danneskjold))
 
+(req-package tao-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'tao-yin
+             (lambda ()
+               (normalize-common-faces))))
+
 (req-package plan9-theme
   :require smart-mode-line
   :defer t
