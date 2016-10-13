@@ -39,6 +39,7 @@
         hungry-delete-backward
         hungry-delete-forward
         indent-for-tab-command
+        indent-new-comment-line
         insert-register
         keyboard-quit
         kill-region
