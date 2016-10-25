@@ -83,6 +83,7 @@
         sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-word
+        sp-remove-active-pair-overlay
         transpose-words
         upcase-region
         wdired-finish-edit
