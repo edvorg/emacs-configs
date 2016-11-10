@@ -18,11 +18,13 @@
         c-electric-star
         c-indent-line-or-region
         c-toggle-electric-state
+        cljr-helm
         cljr-slash
         comint-delchar-or-maybe-eof
         comint-interrupt-subjob
         comint-previous-input
         comment-dwim
+        company-dabbrev
         complete-symbol
         count-words-region
         dired-do-chgrp
