@@ -4,6 +4,9 @@
   :bind (("C-M-<up>" . shift-number-up)
          ("C-M-<down>" . shift-number-down)))
 
+(req-package bool-flip
+  :bind (("C-M-^" . bool-flip-do-flip)))
+
 (req-package twittering-mode
   :commands twit
   :config
