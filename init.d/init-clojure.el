@@ -23,6 +23,7 @@
   (setq cider-auto-jump-to-error 'errors-only)
   :config
   (setq nrepl-log-messages t)
+  (setq nrepl-sync-request-timeout 60)
   (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript))
 
 (req-package helm-cider
