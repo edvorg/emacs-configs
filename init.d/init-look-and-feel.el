@@ -24,11 +24,6 @@
                  (nyan-mode)
                  (nyan-start-animation)))
 
-;; beacon
-
-(req-package beacon
-  :config (beacon-mode))
-
 ;; customizations
 
 (req-package menu-bar
