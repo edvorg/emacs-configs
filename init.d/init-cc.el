@@ -33,33 +33,4 @@
               (lambda ()
                 (setq dummy-h-mode-search-limit 60000)))))
 
-;; gdb
-
-(req-package gdb-mi
-  :loader :built-in
-  :require cc-mode
-  :config
-  (setq gdb-many-windows t)
-  (setq gdb-show-main t))
-
-;; irony
-
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-
-(req-package irony
-  :require cc-mode
-  :config
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'objc-mode-hook 'irony-mode)
-  (add-hook 'irony-mode-hook 'my-irony-mode-hook))
-
-(req-package company-irony
-  :require irony company
-  :init (add-to-list 'company-backends 'company-irony))
-
 (provide 'init-cc)

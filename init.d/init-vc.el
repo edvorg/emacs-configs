@@ -47,8 +47,6 @@
 (req-package git-messenger
   :bind ("C-x v p" . git-messenger:popup-message))
 
-(req-package git-blame)
-
 (req-package gitattributes-mode)
 
 (req-package ztree
