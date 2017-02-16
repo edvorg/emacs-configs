@@ -28,6 +28,7 @@
         complete-symbol
         count-words-region
         dired-do-chgrp
+        down-list
         downcase-region
         duplicate-thing
         easy-kill
@@ -85,8 +86,10 @@
         sp-forward-sexp
         sp-kill-hybrid-sexp
         sp-kill-region
+        sp-kill-sexp
         sp-kill-word
         sp-remove-active-pair-overlay
+        sp-up-sexp
         transpose-words
         upcase-region
         wdired-finish-edit
