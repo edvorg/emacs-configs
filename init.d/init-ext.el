@@ -329,7 +329,7 @@
 
 (req-package guide-key
   :config
-  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v"))
+  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v" "C-c C-t"))
   (guide-key-mode 1))
 
 (req-package easy-kill
