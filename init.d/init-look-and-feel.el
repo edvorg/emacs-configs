@@ -104,6 +104,12 @@
   :init
   (add-theme 'gotham))
 
+(req-package kaolin-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'kaolin))
+
 (req-package gruvbox-theme
   :require smart-mode-line
   :defer t
@@ -115,24 +121,6 @@
   :defer t
   :init
   (add-theme 'darktooth))
-
-(req-package hc-zenburn-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'hc-zenburn))
-
-(req-package dracula-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'dracula))
-
-(req-package reykjavik-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'reykjavik))
 
 (req-package jazz-theme
   :require smart-mode-line
@@ -148,31 +136,11 @@
              (lambda ()
                (normalize-common-faces))))
 
-(req-package mbo70s-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'mbo70s))
-
 (req-package yoshi-theme
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'yoshi))
-
-(req-package danneskjold-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'danneskjold))
-
-(req-package tao-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'tao-yin
-             (lambda ()
-               (normalize-common-faces))))
 
 (req-package plan9-theme
   :require smart-mode-line
@@ -182,28 +150,10 @@
              (lambda ()
                (normalize-common-faces))))
 
-(req-package melancholy-theme
-  :disabled t ;; not yet ready https://github.com/techquila/melancholy-theme/issues/3
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'melancholy
-             (lambda ()
-               (normalize-common-faces))))
-
-(req-package doom-themes
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'doom-molokai))
-
 (req-package sublime-themes
   :require smart-mode-line
   :defer t
   :init
-  (add-theme 'spolsky)
-  (add-theme 'graham)
-  (add-theme 'odersky)
   (add-theme 'junio)
   (add-theme 'wilson))
 
