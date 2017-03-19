@@ -35,13 +35,13 @@
   :init (progn (add-hook-exec 'sgml-mode 'emmet-mode)
                (add-hook-exec 'css-mode 'emmet-mode)))
 
-;; (req-package web-mode :commands web-mode)
+(req-package web-mode :commands web-mode)
 
 (req-package scss-mode
   :mode ("\\.scss\\'" . scss-mode))
 
 (req-package css-mode
-  :defer t
+  :loader :built-in
   :config (setq css-indent-offset 2))
 
 (req-package django-mode
