@@ -51,6 +51,7 @@
          (add-to-list 'sml/hidden-modes " ElDoc")
          (add-to-list 'sml/hidden-modes " company")
          (add-to-list 'sml/hidden-modes " overseer")
+         (add-to-list 'sml/hidden-modes " Guide")
          (sml/setup)))
 
 ;; theme
