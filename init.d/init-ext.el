@@ -266,12 +266,12 @@
 
 ;; shrink/enlarge window
 
-(global-set-key (kbd "s-{") (lambda () (interactive) (shrink-window 10 1)))
-(global-set-key (kbd "s-}") (lambda () (interactive) (enlarge-window 10 1)))
-(global-set-key (kbd "s-?") (lambda () (interactive) (shrink-window 5 nil)))
-(global-set-key (kbd "s-\"") (lambda () (interactive) (enlarge-window 5 nil)))
-(global-set-key (kbd "s-]") (lambda () (interactive) (other-window 1)))
-(global-set-key (kbd "s-[") (lambda () (interactive) (other-window -1)))
+(global-set-key (kbd "C-M-{") (lambda () (interactive) (shrink-window 10 1)))
+(global-set-key (kbd "C-M-}") (lambda () (interactive) (enlarge-window 10 1)))
+(global-set-key (kbd "C-M-?") (lambda () (interactive) (shrink-window 5 nil)))
+(global-set-key (kbd "C-M-\"") (lambda () (interactive) (enlarge-window 5 nil)))
+(global-set-key (kbd "C-M-]") (lambda () (interactive) (other-window 1)))
+(global-set-key (kbd "C-M-[") (lambda () (interactive) (other-window -1)))
 
 ;; expand region
 
@@ -287,7 +287,7 @@
 
 (req-package rotate
   :config
-  (global-set-key (kbd "s-P") 'rotate-layout))
+  (global-set-key (kbd "C-M-P") 'rotate-layout))
 
 ;; rectangles
 
