@@ -12,6 +12,7 @@
     (c-offsets-alist . ((innamespace . [0])))))
 
 (req-package cc-mode
+  :loader :built-in
   :mode (("\\.cpp\\'" . c++-mode)
          ("\\.hpp\\'" . c++-mode)
          ("\\.h\\'" . c++-mode))
