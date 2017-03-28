@@ -338,6 +338,9 @@
 (req-package podcaster
   :config (setq podcaster-feeds-urls '("http://feeds.cognitect.com/cognicast/feed.rss")))
 
+(req-package wotd
+  :commands wotd-all wotd-select)
+
 (req-package elfeed
   :commands elfeed
   :config
