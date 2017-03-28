@@ -67,6 +67,11 @@
   :commands helm-themes
   :require helm)
 
+(req-package helm-books
+  :commands helm-books
+  :require helm)
+
 (req-package helm-org-rifle)
+
 
 (provide 'init-helm)
