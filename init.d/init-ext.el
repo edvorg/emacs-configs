@@ -297,10 +297,6 @@
 (req-package prodigy
   :commands prodigy)
 
-(req-package symon
-  :disabled t
-  :config (symon-mode 1))
-
 (req-package fireplace
   :commands fireplace)
 
