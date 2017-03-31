@@ -64,34 +64,7 @@
   (when custom-fn
     (puthash theme custom-fn my-theme-customizations)))
 
-(defun normalize-faces (faces)
-  (dolist (face faces)
-    (progn
-      (set-face-attribute face nil :family "menlo")
-      (set-face-attribute face nil :underline nil)
-      (set-face-attribute face nil :box nil)
-      (set-face-attribute face nil :height 1.0)
-      (set-face-attribute face nil :width 'normal)
-      (set-face-attribute face nil :weight 'normal))))
-
-(defun normalize-common-faces ()
-  (eval-after-load 'smartparens
-    (normalize-faces '(show-paren-match)))
-  (eval-after-load 'idle-highlight-mode
-    (normalize-faces '(idle-highlight)))
-  (eval-after-load 'org-faces
-    (normalize-faces '(org-level-1
-                       org-level-2
-                       org-level-3
-                       org-level-4
-                       org-level-5
-                       org-level-6
-                       org-level-7
-                       org-level-8
-                       org-tag
-                       org-todo
-                       org-done
-                       org-document-title))))
+;; (normalize-faces (face-list))
 
 (req-package soothe-theme
   :require smart-mode-line
@@ -133,9 +106,7 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-theme 'cyberpunk
-             (lambda ()
-               (normalize-common-faces))))
+  (add-theme 'cyberpunk))
 
 (req-package yoshi-theme
   :require smart-mode-line
@@ -147,9 +118,13 @@
   :require smart-mode-line
   :defer t
   :init
-  (add-theme 'plan9
-             (lambda ()
-               (normalize-common-faces))))
+  (add-theme 'plan9))
+
+(req-package nord-theme
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'nord))
 
 (req-package sublime-themes
   :require smart-mode-line
