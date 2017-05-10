@@ -76,5 +76,6 @@
   (setq load-dir-recursive t)
   :config
   (load-dir-one my-init-dir)
-  (req-package-finish)
   (funcall 'select-theme))
+
+(req-package-finish)
