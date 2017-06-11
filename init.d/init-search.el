@@ -20,11 +20,14 @@
 	  (find-upper-vcs-root UPPER NEWACC))))
 
 (req-package projectile
+  :require grizzl
   :bind (("C-x f" . projectile-find-file)
          ("C-x d" . projectile-find-dir))
   :chords  (("xf" . projectile-find-file)
             ("xd" . projectile-find-dir))
-  :config (projectile-global-mode))
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'grizzl))
 
 ;; visual regexp
 
