@@ -11,7 +11,6 @@
               ("M-i" . helm-swoop)
               ("M-RET" . dired-find-file-other-window))
   :config
-  (add-hook-exec 'dired-mode (lambda () (auto-revert-mode 1)))
   (add-hook-exec 'dired-mode (lambda () (diff-hl-dired-mode 1))))
 
 ;; sunrise commander

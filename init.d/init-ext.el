@@ -259,7 +259,7 @@
 ;; auto reverting
 
 (req-package autorevert
-  :config (progn (setq global-auto-revert-non-file-buffers t)
+  :config (progn (setq global-auto-revert-non-file-buffers nil)
                  (setq auto-revert-interval 0.5)
                  (setq auto-revert-verbose nil)
                  (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))))

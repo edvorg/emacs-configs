@@ -22,8 +22,7 @@
 (req-package magit
   :chords ((";m" . magit-status))
   :init
-  (setq magit-last-seen-setup-instructions "1.4.0")
-  (setq magit-auto-revert-mode t)())
+  (setq magit-last-seen-setup-instructions "1.4.0"))
 
 (req-package magit-gitflow
   :require magit
