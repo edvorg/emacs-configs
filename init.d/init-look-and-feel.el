@@ -102,12 +102,6 @@
   :init
   (add-theme 'jazz))
 
-(req-package cyberpunk-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'cyberpunk))
-
 (req-package yoshi-theme
   :require smart-mode-line
   :defer t
@@ -119,12 +113,6 @@
   :defer t
   :init
   (add-theme 'plan9))
-
-(req-package nord-theme
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'nord))
 
 (req-package sublime-themes
   :require smart-mode-line
