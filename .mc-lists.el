@@ -77,6 +77,8 @@
         prog-indent-sexp
         rectangle-mark-mode
         sgml-slash
+        smart-shift-pass-through
+        smart-shift-right
         smex
         sp--self-insert-command
         sp-backward-delete-char
