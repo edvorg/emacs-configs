@@ -16,6 +16,9 @@
   (setq twittering-use-master-password t)
   (twittering-enable-unread-status-notifier))
 
+(req-package mastodon
+  :init (setq mastodon-instance-url "https://mastodon.social"))
+
 (req-package multifiles
   :bind ("C-!" . mf/mirror-region-in-multifile))
 
@@ -325,7 +328,7 @@
 
 (req-package guide-key
   :config
-  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v" "C-c C-t"))
+  (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v" "C-c C-t" "C-c C-m"))
   (guide-key-mode 1))
 
 (req-package easy-kill
