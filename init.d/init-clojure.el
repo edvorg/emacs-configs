@@ -45,7 +45,8 @@
   :commands clj-refactor-mode
   :init
   (add-hook-exec 'cider-mode #'clj-refactor-mode)
-  (setq cljr-warn-on-eval nil))
+  (setq cljr-warn-on-eval nil)
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
 
 (req-package cljr-helm
   :require clj-refactor
