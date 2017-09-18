@@ -20,6 +20,7 @@
         c-toggle-electric-state
         cljr-helm
         cljr-slash
+        clojure-align
         comint-delchar-or-maybe-eof
         comint-interrupt-subjob
         comint-previous-input
@@ -72,11 +73,14 @@
         org-self-insert-command
         org-set-tags-command
         org-shiftleft
+        org-shiftmetaleft
         org-shiftright
         org-yank
         prog-indent-sexp
         rectangle-mark-mode
         sgml-slash
+        sh-assignment
+        smart-shift-left
         smart-shift-pass-through
         smart-shift-right
         smex
@@ -104,6 +108,7 @@
       '(
         ace-window
         c-up-conditional
+        cider-find-var
         diff-hl-next-hunk
         end-of-buffer
         find-file-in-vcs-directory
