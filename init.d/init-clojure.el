@@ -9,7 +9,17 @@
 (req-package clojure-mode
   :mode (("clj\\'" . clojure-mode)
          ("cljs\\'" . clojurescript-mode)
-         (".lein-env\\'" . clojure-mode)))
+         ("cljc\\'" . clojurec-mode)
+         (".lein-env\\'" . clojure-mode))
+  :config
+  (add-hook 'after-save-hook
+            '(lambda ()
+               (when (or (eq 'clojure-mode major-mode)
+                         (eq 'clojurescript-mode major-mode)
+                         (eq 'clojurec-mode major-mode))
+                 (when-let ((project-dir (clojure-project-dir)))
+                   (let ((default-directory project-dir))
+                     (shell-command "find src/ -type f | xargs etags --regex='/[ \\t\\(]*def[a-z\\-]* \\([a-z-!]+\\)/\\1/' --regex='/[ \\t\\(]*ns \\([a-z.]+\\)/\\1/'")))))))
 
 (req-package clojure-mode-extra-font-locking
   :require clojure-mode)
