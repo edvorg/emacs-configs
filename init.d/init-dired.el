@@ -11,7 +11,9 @@
               ("M-i" . helm-swoop)
               ("M-RET" . dired-find-file-other-window))
   :config
-  (add-hook-exec 'dired-mode (lambda () (diff-hl-dired-mode 1))))
+  (add-hook-exec 'dired-mode (lambda ()
+                               (diff-hl-dired-mode 1)
+                               (setq dired-dwim-target t))))
 
 ;; sunrise commander
 
@@ -30,5 +32,9 @@
 (req-package dired-launch
   :require dired
   :init (dired-launch-enable))
+
+(req-package dired-details
+  :init (setq-default dired-details-hidden-string "- ")
+  :config (dired-details-install))
 
 (provide 'init-dired)
