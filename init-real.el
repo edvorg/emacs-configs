@@ -10,10 +10,11 @@
 
 ;; elpa
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("sunrise" . "http://joseito.republika.pl/sunrise-commander/"))
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("sunrise" . "http://joseito.republika.pl/sunrise-commander/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 (defconst my-init-dir "~/.emacs.d/init.d")
 (defconst emacs-major-version-rad 1000000)
@@ -21,9 +22,6 @@
 (defun has-emacs-version (major minor)
   (<= (+ (* major emacs-major-version-rad) minor)
       (+ (* emacs-major-version emacs-major-version-rad) emacs-minor-version)))
-
-(if (not (has-emacs-version 24 0))
-    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (eval-when-compile (package-initialize))
 
