@@ -6,20 +6,29 @@
   :init (progn (define-key clojure-mode-map (kbd "C-h j") 'clojure-cheatsheet)
                (define-key cider-repl-mode-map (kbd "C-h j") 'clojure-cheatsheet)))
 
+(defun clojure-write-tags ()
+  (when (or (eq 'clojure-mode major-mode)
+            (eq 'clojurescript-mode major-mode)
+            (eq 'clojurec-mode major-mode))
+    (when-let ((project-dir (clojure-project-dir)))
+      (let ((default-directory project-dir))
+        (shell-command "find src/ -type f | xargs etags --regex='/[ \\t\\(]*def[a-z\\-]* \\([a-z-!]+\\)/\\1/' --regex='/[ \\t\\(]*ns \\([a-z.]+\\)/\\1/'")))))
+
+(defun clojure-tags-navigate ()
+  (interactive)
+  (when (not (helm-etags-get-tag-file))
+    (clojure-write-tags))
+  (helm-etags-select '(4)))
+
 (req-package clojure-mode
   :mode (("clj\\'" . clojure-mode)
          ("cljs\\'" . clojurescript-mode)
          ("cljc\\'" . clojurec-mode)
          (".lein-env\\'" . clojure-mode))
   :config
-  (add-hook 'after-save-hook
-            '(lambda ()
-               (when (or (eq 'clojure-mode major-mode)
-                         (eq 'clojurescript-mode major-mode)
-                         (eq 'clojurec-mode major-mode))
-                 (when-let ((project-dir (clojure-project-dir)))
-                   (let ((default-directory project-dir))
-                     (shell-command "find src/ -type f | xargs etags --regex='/[ \\t\\(]*def[a-z\\-]* \\([a-z-!]+\\)/\\1/' --regex='/[ \\t\\(]*ns \\([a-z.]+\\)/\\1/'")))))))
+  (add-hook 'after-save-hook 'clojure-write-tags)
+  (setq tags-revert-without-query t)
+  (setq tags-add-tables nil))
 
 (req-package clojure-mode-extra-font-locking
   :require clojure-mode)
@@ -34,7 +43,8 @@
   :config
   (setq nrepl-log-messages t)
   (setq nrepl-sync-request-timeout 60)
-  (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript))
+  (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript)
+  (define-key cider-mode-map (kbd "C-x c e") 'clojure-tags-navigate))
 
 (req-package helm-cider
   :require cider helm
