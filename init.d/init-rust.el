@@ -12,4 +12,8 @@
   :commands (racer-mode)
   :config
   (add-hook-exec 'racer-mode #'eldoc-mode)
-  (add-hook-exec 'racer-mode #'company-mode))
+  (add-hook-exec 'racer-mode #'company-mode)
+  (add-hook-exec 'racer-mode #'cargo-minor-mode))
+
+(req-package cargo
+  :commands cargo-minor-mode)
