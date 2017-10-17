@@ -28,7 +28,8 @@
   :config
   (add-hook 'after-save-hook 'clojure-write-tags)
   (setq tags-revert-without-query t)
-  (setq tags-add-tables nil))
+  (setq tags-add-tables nil)
+  (setq clojure-indent-style :align-arguments))
 
 (req-package clojure-mode-extra-font-locking
   :require clojure-mode)
