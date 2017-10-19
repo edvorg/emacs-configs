@@ -29,7 +29,13 @@
   (add-hook 'after-save-hook 'clojure-write-tags)
   (setq tags-revert-without-query t)
   (setq tags-add-tables nil)
-  (setq clojure-indent-style :align-arguments))
+  (setq clojure-indent-style :align-arguments)
+  (put-clojure-indent 'ch/modify-column 1)
+  (put-clojure-indent 'ch/add-columns 1)
+  (put-clojure-indent 'ch/add-foreign-key-constraint 1)
+  (put-clojure-indent 'ch/create-index 1)
+  (put-clojure-indent 'ch/create-table 1)
+  (put-clojure-indent 'ch/add-unique-constraint 1))
 
 (req-package clojure-mode-extra-font-locking
   :require clojure-mode)
