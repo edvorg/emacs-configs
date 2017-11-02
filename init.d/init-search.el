@@ -45,6 +45,8 @@
 (req-package grep
   :defer 1
   :config (progn
+            (add-to-list 'grep-find-ignored-directories ".release")
+            (add-to-list 'grep-find-ignored-directories ".repos")
             (add-to-list 'grep-find-ignored-directories "auto")
             (add-to-list 'grep-find-ignored-directories "elpa")
             (add-to-list 'grep-find-ignored-directories ".git")
