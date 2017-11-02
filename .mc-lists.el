@@ -18,9 +18,12 @@
         c-electric-star
         c-indent-line-or-region
         c-toggle-electric-state
+        cider-eval-last-sexp
+        cider-eval-last-sexp-and-replace
         cljr-helm
         cljr-slash
         clojure-align
+        clojure-convert-collection-to-vector
         comint-delchar-or-maybe-eof
         comint-interrupt-subjob
         comint-previous-input
