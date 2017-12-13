@@ -199,4 +199,9 @@
 (req-package nameless
   :config (add-hook-exec 'emacs-lisp-mode #'nameless-mode))
 
+(req-package dash
+  :config
+  (dash-enable-font-lock)
+  (message "loaded"))
+
 (provide 'init-look-and-feel)

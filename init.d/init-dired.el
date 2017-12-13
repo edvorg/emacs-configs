@@ -15,12 +15,6 @@
                                (diff-hl-dired-mode 1)
                                (setq dired-dwim-target t))))
 
-;; sunrise commander
-
-(req-package sunrise-commander :commands sunrise-cd)
-
-(req-package sunrise-x-loop :require sunrise-commander)
-
 ;; dired rainbow
 
 (req-package dired-rainbow :require dired)

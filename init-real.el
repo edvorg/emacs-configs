@@ -11,9 +11,8 @@
 ;; elpa
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("sunrise" . "http://joseito.republika.pl/sunrise-commander/")
                          ("melpa" . "https://melpa.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
+                         ("org" . "https://orgmode.org/elpa/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 (defconst my-init-dir "~/.emacs.d/init.d")
