@@ -102,6 +102,7 @@
         transpose-words
         upcase-region
         wdired-finish-edit
+        wdired-next-line
         yaml-electric-backspace
         yas-expand
         zygospore-toggle-delete-other-windows
