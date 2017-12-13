@@ -16,6 +16,7 @@
 
 (defun clojure-tags-navigate ()
   (interactive)
+  (require 'helm-tags)
   (when (not (helm-etags-get-tag-file))
     (clojure-write-tags))
   (helm-etags-select '(4)))
