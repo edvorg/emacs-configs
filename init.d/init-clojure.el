@@ -120,4 +120,28 @@
 
 (req-package sotclojure :disabled t)
 
+(defun reverse-destructure-form ()
+  (interactive)
+  (let* ((s (thread-last (buffer-substring (mark) (point))
+                         (format "
+(let [f (fn f [form]
+     (cond
+       (map? form)  (->> form
+                         seq
+                         (reduce (fn [m [destructure-value destructure-key]]
+                                   (cond
+                                     (= :or destructure-value)   m
+                                     (= :keys destructure-value) (->> destructure-key
+                                                                      (map (fn [k]
+                                                                             [(keyword k) k]))
+                                                                      (into m))
+                                     :default                    (assoc m destructure-key (-> destructure-value
+                                                                                              f))))
+                                 {}))
+       (coll? form) (mapv f form)
+       :default     form))]
+   (f '%s))
+"))))
+                         (cider--pprint-eval-form s)))
+
 (provide 'init-clojure)
