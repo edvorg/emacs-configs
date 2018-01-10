@@ -5,8 +5,7 @@
   :init
   (add-to-list 'exec-path "~/.cargo/bin")
   :config
-  (add-hook-exec 'rust-mode #'racer-mode)
-  (setq rust-format-on-save t))
+  (add-hook-exec 'rust-mode #'racer-mode))
 
 (req-package racer
   :commands (racer-mode)
@@ -17,3 +16,10 @@
 
 (req-package cargo
   :commands cargo-minor-mode)
+
+(req-package flycheck-rust
+  :require flycheck
+  :config (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(req-package toml-mode
+  :mode (("toml\\'" . toml-mode)))
