@@ -1,9 +1,12 @@
 (require 'req-package)
 
-(req-package ant :commands ant)
+(req-package ant
+  :ensure t :commands ant)
 
-(req-package emacs-eclim :disabled t)
+(req-package emacs-eclim
+  :ensure t :disabled t)
 
-(req-package malabar-mode :disabled t)
+(req-package malabar-mode
+  :ensure t :disabled t)
 
 (provide 'init-java)

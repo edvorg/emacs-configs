@@ -13,42 +13,49 @@
   (svn-status (find-upper-svn-root default-directory default-directory)))
 
 (req-package psvn
+  :ensure t
   :commands svn-status
   :chords ((";s" . upper-svn-status)))
 
 (req-package git-timemachine
+  :ensure t
   :bind (("C-x v t" . git-timemachine)))
 
 (req-package magit
+  :ensure t
   :chords ((";m" . magit-status))
   :init
   (setq magit-last-seen-setup-instructions "1.4.0"))
 
 (req-package magit-gitflow
+  :ensure t
   :require magit
   :commands turn-on-magit-gitflow
   :init (add-hook-exec 'magit-mode 'turn-on-magit-gitflow))
 
-(req-package magit-gh-pulls
-  :require magit
-  :config (add-hook-exec 'magit-mode 'turn-on-magit-gh-pulls))
-
-(req-package magit-svn :require magit)
+(req-package magit-svn
+  :ensure t :require magit)
 
 (req-package helm-ls-git
+  :ensure t
   :require helm
   :bind ("M-+" . helm-ls-git-ls))
 
-(req-package gitconfig-mode)
+(req-package gitconfig-mode
+  :ensure t)
 
-(req-package gitignore-mode)
+(req-package gitignore-mode
+  :ensure t)
 
 (req-package git-messenger
+  :ensure t
   :bind ("C-x v p" . git-messenger:popup-message))
 
-(req-package gitattributes-mode)
+(req-package gitattributes-mode
+  :ensure t)
 
 (req-package ztree
+  :ensure t
   :bind ("<f9>" . ztree-diff))
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)

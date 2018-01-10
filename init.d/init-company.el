@@ -1,6 +1,7 @@
 (require 'req-package)
 
 (req-package company
+  :ensure t
   :require yasnippet
   :config (progn (global-company-mode 1)
                  (setq company-idle-delay 0.1)
@@ -17,6 +18,7 @@
                  (global-set-key (kbd "C-c C-y") 'company-yasnippet)))
 
 (req-package company-quickhelp
+  :ensure t
   :require company
   :config (company-quickhelp-mode 1))
 

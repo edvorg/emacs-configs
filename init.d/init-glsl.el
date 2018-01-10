@@ -3,6 +3,7 @@
 ;; glsl
 
 (req-package glsl-mode
+  :ensure t
   :mode (("\\.vs\\'" . glsl-mode)
          ("\\.fs\\'" . glsl-mode)
          ("\\.gs\\'" . glsl-mode))

@@ -10,6 +10,7 @@
 		   (setenv "ANDROID_NDK" "/usr/local/opt/android-ndk")
            (add-to-list 'exec-path "/usr/local/bin")
            (req-package exec-path-from-shell
+             :ensure t
              :require dash
              :init (let* ((variables (shell-command-to-string "cat ~/.bash_profile | grep -e '^export' | sed -e 's/^export \\([A-Za-z0-9_]*\\)=.*$/\\1/g'"))
                           (variables (split-string variables "\n"))

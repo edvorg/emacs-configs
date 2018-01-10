@@ -2,11 +2,15 @@
 
 ;; use igrep
 
-(req-package igrep :commands igrep)
+(req-package igrep
+  :ensure t
+  :commands igrep)
 
 ;; use wgrep
 
-(req-package wgrep :commands wgrep)
+(req-package wgrep
+  :ensure t
+  :commands wgrep)
 
 ;; in-project search
 
@@ -19,7 +23,11 @@
 		NEWACC
 	  (find-upper-vcs-root UPPER NEWACC))))
 
+(req-package grizzl
+  :ensure t)
+
 (req-package projectile
+  :ensure t
   :require grizzl
   :bind (("C-x f" . projectile-find-file)
          ("C-x d" . projectile-find-dir))
@@ -31,7 +39,11 @@
 
 ;; visual regexp
 
+(req-package visual-regexp-steroids
+  :ensure t)
+
 (req-package visual-regexp
+  :ensure t
   :require multiple-cursors visual-regexp-steroids
   :bind (("C-c r" . vr/replace)
          ("C-c q" . vr/query-replace)
@@ -43,6 +55,7 @@
 ;; ignored folders
 
 (req-package grep
+  :ensure t
   :defer 1
   :config (progn
             (add-to-list 'grep-find-ignored-directories ".release")

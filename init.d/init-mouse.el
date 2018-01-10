@@ -3,6 +3,7 @@
 ;; xt mosue
 
 (req-package xt-mouse
+  :ensure t
   :require mouse
   :config (progn (xterm-mouse-mode 1)
                  (defun track-mouse (e))))

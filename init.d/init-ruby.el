@@ -3,10 +3,11 @@
 ;; ruby mode for rakefile
 
 (req-package ruby-mode
-  :loader :built-in
+  :ensure t
   :mode (("Rakefile\\'" . ruby-mode)
 		 ("rb\\'" . ruby-mode)))
 
-(req-package rake :commands rake)
+(req-package rake
+  :ensure t :commands rake)
 
 (provide 'init-ruby)

@@ -8,16 +8,19 @@
 ;; use timeclock
 
 (req-package timeclock
+  :ensure t
   :config (progn (display-time-mode 1)))
 
 ;; highlight number in code
 
 (req-package highlight-numbers
+  :ensure t
   :config (add-hook-exec 'find-file (lambda () (highlight-numbers-mode 1))))
 
 ;; some very useful extension
 
 (req-package nyan-mode
+  :ensure t
   :config (progn (setq nyan-animation-frame-interval 0.1)
                  (setq nyan-bar-length 8)
                  (setq nyan-wavy-trail t)
@@ -33,6 +36,7 @@
 ;; main line
 
 (req-package smart-mode-line
+  :ensure t
   :config
   (progn (setq sml/shorten-modes t)
          (setq sml/shorten-directory t)
@@ -67,54 +71,65 @@
 ;; (normalize-faces (face-list))
 
 (req-package soothe-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'soothe))
 
 (req-package gotham-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'gotham))
 
-(req-package kaolin-theme
+(req-package kaolin-themes
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
-  (add-theme 'kaolin))
+  (add-theme 'kaolin-dark)
+  (add-theme 'kaolin-ocean)
+  (add-theme 'kaolin-eclipse))
 
 (req-package gruvbox-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'gruvbox))
 
 (req-package darktooth-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'darktooth))
 
 (req-package jazz-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'jazz))
 
 (req-package yoshi-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'yoshi))
 
 (req-package plan9-theme
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'plan9))
 
 (req-package sublime-themes
+  :ensure t
   :require smart-mode-line
   :defer t
   :init
@@ -143,6 +158,7 @@
 ;; anzu
 
 (req-package anzu
+  :ensure t
   :require
   smart-mode-line
   :config
@@ -173,16 +189,19 @@
 ;; todo, fixme highlighting
 
 (req-package fic-mode
+  :ensure t
   :config
   (add-hook-exec 'prog-mode (lambda () (fic-mode 1))))
 
 (req-package rainbow-delimiters
+  :ensure t
   :commands rainbow-delimiters-mode
   :init
   (custom-set-variables '(rainbow-delimiters-max-face-count 8))
   (add-hook-exec 'emacs-lisp-mode (lambda () (rainbow-delimiters-mode 1))))
 
 (req-package rainbow-delimiters
+  :ensure t
   :require clojure-mode
   :commands rainbow-delimiters-mode
   :init
@@ -190,16 +209,22 @@
 
 ;; diff highlight
 
+(req-package smartrep
+  :ensure t)
+
 (req-package diff-hl
+  :ensure t
   :require smartrep
   :config
   (global-diff-hl-mode 1)
   (global-set-key (kbd "C-x v R") 'diff-hl-revert-hunk))
 
 (req-package nameless
+  :ensure t
   :config (add-hook-exec 'emacs-lisp-mode #'nameless-mode))
 
 (req-package dash
+  :ensure t
   :config
   (dash-enable-font-lock)
   (message "loaded"))

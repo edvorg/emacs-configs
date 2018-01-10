@@ -9,11 +9,14 @@
 
 (when (eq system-type 'gnu/linux)
   (req-package browse-url
+    :ensure t
     :config (setq browse-url-browser-function
                   (lambda (url &rest args)
                     (call-process-shell-command "xdg-open" nil 0 nil url))))
-  (req-package aurel :commands aurel-package-search)
+  (req-package aurel
+    :ensure t :commands aurel-package-search)
   (req-package helm-systemd
+    :ensure t
     :require helm
     :commands helm-systemd)
   (setup-linux-font nil)

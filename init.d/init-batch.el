@@ -2,6 +2,6 @@
 
 ;; batch mode
 
-(req-package batch-mode :mode "\\.bat\\'")
+(req-package batch-mode :ensure t :mode "\\.bat\\'")
 
 (provide 'init-batch)

@@ -3,6 +3,7 @@
 ;; clang format
 
 (req-package clang-format
+  :ensure t
   :commands clang-format-region)
 
 ;; completion with clang
@@ -12,7 +13,7 @@
     (c-offsets-alist . ((innamespace . [0])))))
 
 (req-package cc-mode
-  :loader :built-in
+  :ensure t
   :mode (("\\.cpp\\'" . c++-mode)
          ("\\.hpp\\'" . c++-mode)
          ("\\.h\\'" . c++-mode))
@@ -24,6 +25,7 @@
 ;; detect mode for .h file
 
 (req-package dummy-h-mode
+  :ensure t
   :commands dummy-h-mode
   :init (add-to-list 'auto-mode-alist '("\\.h$" . dummy-h-mode))
   :config (progn

@@ -1,6 +1,7 @@
 (require 'req-package)
 
 (req-package bash-completion
+  :ensure t
   :require shell
   :commands bash-completion-dynamic-complete
   :init
@@ -12,9 +13,11 @@
   (add-hook-exec 'shell-mode 'shell-command-complete-functions
                  'bash-completion-dynamic-complete))
 
-(req-package company-shell)
+(req-package company-shell
+  :ensure t)
 
 (req-package shell-pop
+  :ensure t
   :bind ("M-\"" . shell-pop))
 
 (provide 'init-bash)

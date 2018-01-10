@@ -17,17 +17,23 @@
 
 ;; dired rainbow
 
-(req-package dired-rainbow :require dired)
+(req-package dired-rainbow
+  :ensure t
+  :require dired)
 
 ;; dired open
 
-(req-package dired-open :require dired)
+(req-package dired-open
+  :ensure t
+  :require dired)
 
 (req-package dired-launch
+  :ensure t
   :require dired
   :init (dired-launch-enable))
 
 (req-package dired-details
+  :ensure t
   :init (setq-default dired-details-hidden-string "- ")
   :config (dired-details-install))
 

@@ -61,12 +61,13 @@
 
 (require-package 'req-package)
 (require 'req-package)
-(req-package--log-set-level 'trace)
+(req-package--log-set-level 'debug)
 
 ;; init.d
 
 (random t)
 (req-package load-dir
+  :ensure t
   :force true
   :init
   (setq force-load-messages nil)

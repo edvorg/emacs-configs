@@ -1,6 +1,7 @@
 (require 'req-package)
 
 (req-package emr
+  :ensure t
   :commands
   emr-show-refactor-menu
   :init
@@ -10,9 +11,11 @@
   (emr-initialize))
 
 (req-package litable
+  :ensure t
   :commands litable-mode)
 
 (req-package eldoc
+  :ensure t
   :commands eldoc-mode
   :init (progn (add-hook-exec 'emacs-lisp-mode 'eldoc-mode)
 			   (add-hook-exec 'lisp-interaction-mode 'eldoc-mode)))
@@ -25,26 +28,32 @@
             (lambda () (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc)))))
 
 (req-package elisp-slime-nav
+  :ensure t
   :commands elisp-slime-nav-mode
   :init (progn (add-hook-exec 'emacs-lisp-mode 'elisp-slime-nav-mode)
                (add-hook-exec 'lisp-interaction-mode 'elisp-slime-nav-mode)))
 
 (req-package ert-modeline
+  :ensure t
   :commands ert-modeline-mode
   :init (add-hook-exec 'emacs-lisp-mode 'ert-modeline-mode))
 
 (req-package overseer
+  :ensure t
   :require f
   :commands overseer-mode
   :init (add-hook-exec 'emacs-lisp-mode 'overseer-mode))
 
 (req-package el-mock
+  :ensure t
   :require lisp-mode)
 
 (req-package ert-expectations
+  :ensure t
   :require lisp-mode)
 
 (req-package undercover
+  :ensure t
   :require lisp-mode)
 
 (provide 'init-elisp)

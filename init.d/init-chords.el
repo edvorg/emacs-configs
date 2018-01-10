@@ -1,6 +1,7 @@
 (require 'req-package)
 
 (req-package key-chord
+  :ensure t
   :chords (("qw" . kill-this-buffer)
            ("qq" . kill-this-buffer)
            (";2" . split-window-below)

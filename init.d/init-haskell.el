@@ -3,6 +3,7 @@
 ;; haskell mode
 
 (req-package haskell-mode
+  :ensure t
   :mode (("\\.hs$" . haskell-mode)
          (".xmobarrc$" . haskell-mode)
          ("\\.cabal$" . haskell-cabal-mode))
@@ -14,16 +15,19 @@
   (add-hook-exec 'haskell-mode (lambda () (ghc-init))))
 
 (req-package company-ghc
+  :ensure t
   :require haskell-mode company
   :config
   (add-to-list 'company-backends 'company-ghc))
 
 (req-package hindent
+  :ensure t
   :require haskell-mode
   :commands hindent-mode
   :init (add-hook-exec 'haskell-mode 'hindent-mode))
 
 (req-package haskell-snippets
+  :ensure t
   :require haskell-mode yasnippet)
 
 (provide 'init-haskell)
