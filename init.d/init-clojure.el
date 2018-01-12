@@ -39,6 +39,8 @@
   (put-clojure-indent 'ch/add-foreign-key-constraint 1)
   (put-clojure-indent 'ch/create-index 1)
   (put-clojure-indent 'ch/create-table 1)
+  (put-clojure-indent 'ch/insert-data 1)
+  (put-clojure-indent 'ch/update-data 1)
   (put-clojure-indent 'ch/add-unique-constraint 1)
   (put-clojure-indent 'ch/add-foreign-key-constraint 1))
 

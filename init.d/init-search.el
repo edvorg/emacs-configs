@@ -64,6 +64,8 @@
             (add-to-list 'grep-find-ignored-directories "elpa")
             (add-to-list 'grep-find-ignored-directories ".git")
             (add-to-list 'grep-find-ignored-directories ".svn")
+            (add-to-list 'grep-find-ignored-directories ".repos")
+            (add-to-list 'grep-find-ignored-directories ".release")
             (add-hook-exec 'grep-mode (lambda () (toggle-truncate-lines 1)))))
 
 (provide 'init-search)
