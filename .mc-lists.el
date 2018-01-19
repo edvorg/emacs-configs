@@ -83,6 +83,7 @@
         rectangle-mark-mode
         sgml-slash
         sh-assignment
+        slime-autodoc-space
         smart-shift-left
         smart-shift-pass-through
         smart-shift-right
