@@ -13,11 +13,6 @@
                          ("marmalade" . "https://marmalade-repo.org/packages/")))
 
 (defconst my-init-dir "~/.emacs.d/init.d")
-(defconst emacs-major-version-rad 1000000)
-
-(defun has-emacs-version (major minor)
-  (<= (+ (* major emacs-major-version-rad) minor)
-      (+ (* emacs-major-version emacs-major-version-rad) emacs-minor-version)))
 
 (eval-when-compile (package-initialize))
 
@@ -43,25 +38,30 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (require-package 'el-get)
 (require 'el-get)
-(use-package el-get
-  :config
-  (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-  (el-get 'sync))
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
+(el-get 'sync)
+
+;; :el-get keyword for use-package
+
+(use-package use-package-el-get
+  :ensure t
+  :config (use-package-el-get-setup))
 
 ;; chords
 
-(require-package 'use-package-chords)
-(require 'use-package-chords)
+(use-package use-package-chords
+  :ensure t)
 
 ;; req-package
 
-(require-package 'req-package)
-(require 'req-package)
-(req-package--log-set-level 'debug)
+(use-package req-package
+  :ensure t
+  :config (req-package--log-set-level 'debug))
 
 ;; init.d
 
 (random t)
+
 (req-package load-dir
   :ensure t
   :force true
