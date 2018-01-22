@@ -4,10 +4,6 @@
 (unless (server-running-p)
   (server-start))
 
-;; recompile configs
-
-(add-hook 'kill-emacs-hook (lambda () (byte-recompile-directory my-init-dir 0 t)))
-
 ;; elpa
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
