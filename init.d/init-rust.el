@@ -13,6 +13,8 @@
   :ensure t
   :pin melpa-stable
   :commands (racer-mode)
+  :init
+  (setq racer-rust-src-path (shell-command-to-string "echo -n $(rustc --print sysroot)/lib/rustlib/src/rust/src"))
   :config
   (add-hook-exec 'racer-mode #'eldoc-mode)
   (add-hook-exec 'racer-mode #'company-mode)
