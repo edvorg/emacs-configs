@@ -16,9 +16,4 @@
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2))))
 
-(req-package json
-  :ensure t
-  :el-get t
-  :commands json-read json-read-from-string json-encode)
-
 (provide 'init-json)
