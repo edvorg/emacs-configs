@@ -157,7 +157,9 @@
   :bind (("C-S-c C-S-c" . mc/edit-lines)
          ("C-<" . mc/mark-previous-like-this)
          ("C->" . mc/mark-next-like-this)
-         ("C-c C-." . mc/mark-all-like-this)))
+         ("C-c ." . mc/mark-all-like-this)
+         ("C-M->" . mc/skip-to-next-like-this)
+         ("C-M-<" . mc/skip-to-previous-like-this)))
 
 ;; ant
 
@@ -299,7 +301,10 @@
 (req-package smartparens-config
   :ensure smartparens
   :config (progn (smartparens-global-mode t)
-                 (smartparens-global-strict-mode t)
+                 (add-hook-exec 'clojure-mode 'smartparens-strict-mode)
+                 (add-hook-exec 'emacs-lisp-mode 'smartparens-strict-mode)
+                 (add-hook-exec 'css-mode 'smartparens-strict-mode)
+                 (add-hook-exec 'rust-mode 'smartparens-strict-mode)
                  (show-smartparens-global-mode t)
                  (global-set-key (kbd "C-M-a") 'sp-beginning-of-sexp)
                  (global-set-key (kbd "C-M-e") 'sp-end-of-sexp)
@@ -400,5 +405,8 @@
 (req-package wotd
   :ensure t
   :commands wotd-all wotd-select)
+
+(req-package neotree
+  :bind ("C-c C-f C-d" . neotree-toggle))
 
 (provide 'init-ext)
