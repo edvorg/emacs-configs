@@ -44,7 +44,7 @@
 
 (req-package visual-regexp
   :ensure t
-  :require multiple-cursors visual-regexp-steroids
+  :require visual-regexp-steroids
   :bind (("C-c r" . vr/replace)
          ("C-c q" . vr/query-replace)
          ("C-c m" . vr/mc-mark)
@@ -66,6 +66,13 @@
             (add-to-list 'grep-find-ignored-directories ".svn")
             (add-to-list 'grep-find-ignored-directories ".repos")
             (add-to-list 'grep-find-ignored-directories ".release")
+            (add-to-list 'grep-find-ignored-directories "xwiki")
+            (add-to-list 'grep-find-ignored-directories "target")
+            (add-to-list 'grep-find-ignored-directories "resources")
+            (add-to-list 'grep-find-ignored-directories "xwiki-raven")
+            (add-to-list 'grep-find-ignored-directories "node_modules")
+            (add-to-list 'grep-find-ignored-directories ".sass-cache")
+            (add-to-list 'grep-find-ignored-directories "resources/public/js")
             (add-hook-exec 'grep-mode (lambda () (toggle-truncate-lines 1)))))
 
 (provide 'init-search)
