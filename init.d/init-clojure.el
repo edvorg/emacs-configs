@@ -42,7 +42,19 @@
   (put-clojure-indent 'ch/insert-data 1)
   (put-clojure-indent 'ch/update-data 1)
   (put-clojure-indent 'ch/add-unique-constraint 1)
-  (put-clojure-indent 'ch/add-foreign-key-constraint 1))
+  (put-clojure-indent 'ch/add-foreign-key-constraint 1)
+  (define-key clojure-mode-map (kbd "<f5>")
+    (lambda (&rest args)
+      (interactive)
+      (let* ((project-dir (projectile-project-root))
+             (file-path (buffer-file-name))
+             (file-local-path (s-replace project-dir "" file-path)))
+        (if (not (s-starts-with? "src/" file-local-path))
+            (message "Couldn't find test file")
+          (let* ((file-path (thread-last (s-replace "src/" "test/" file-local-path)
+                              (s-replace ".clj" "_test.clj")
+                              (s-concat project-dir))))
+            (find-file file-path)))))))
 
 (req-package clojure-mode-extra-font-locking
   :ensure t
