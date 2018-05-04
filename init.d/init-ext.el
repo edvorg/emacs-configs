@@ -409,4 +409,8 @@
 (req-package neotree
   :bind ("C-c C-f C-d" . neotree-toggle))
 
+(req-package protobuf-mode
+  :ensure t
+  :mode (("proto\\'" . protobuf-mode)))
+
 (provide 'init-ext)
