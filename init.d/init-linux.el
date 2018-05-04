@@ -15,10 +15,6 @@
                     (call-process-shell-command "xdg-open" nil 0 nil url))))
   (req-package aurel
     :ensure t :commands aurel-package-search)
-  (req-package helm-systemd
-    :ensure t
-    :require helm
-    :commands helm-systemd)
   (setup-linux-font nil)
   (add-to-list 'after-make-frame-functions 'setup-linux-font))
 
