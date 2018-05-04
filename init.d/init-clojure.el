@@ -84,13 +84,6 @@
   :require cider
   :commands slamhound)
 
-(req-package cider-profile
-  :ensure t
-  :require cider
-  :commands cider-profile-mode
-  :init (progn (add-hook-exec 'cider-mode 'cider-profile-mode)
-               (add-hook-exec 'cider-repl-mode 'cider-profile-mode)))
-
 (req-package clj-refactor
   :ensure t
   :require cider
