@@ -3,8 +3,8 @@
 (defun setup-linux-font (frame)
   (condition-case-unless-debug e
       (progn
-        (add-to-list 'default-frame-alist '(font . "Source Code Pro Semibold 11"))
-        (set-default-font "Source Code Pro Semibold 11" t))
+        (add-to-list 'default-frame-alist '(font . "Source Code Pro Semibold 9"))
+        (set-default-font "Source Code Pro Semibold 9" t))
     (error (message "can not load SourceCodePro font : %s" e))))
 
 (when (eq system-type 'gnu/linux)
