@@ -169,4 +169,16 @@
 "))))
                          (cider--pprint-eval-form s)))
 
+(defun clojure-sort-map ()
+  (interactive)
+  (let* ((s (thread-last (buffer-substring (mark) (point))
+              (format "
+(->> '%s
+     (clojure.walk/postwalk (fn [node]
+                                (cond
+                                 (map? node) (into (sorted-map) node)
+                                 :default node))))
+"))))
+                         (cider--pprint-eval-form s)))
+
 (provide 'init-clojure)
