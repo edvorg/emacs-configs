@@ -13,7 +13,7 @@
             (eq 'clojurec-mode major-mode))
     (when-let ((project-dir (clojure-project-dir)))
       (let ((default-directory project-dir))
-        (shell-command "find src/ -type f | xargs etags --regex='/[ \\t\\(]*def[a-z\\-]* \\([a-z-!]+\\)/\\1/' --regex='/[ \\t\\(]*ns \\([a-z.]+\\)/\\1/'")))))
+        (shell-command "find src/ test/ -type f | xargs etags --regex='/[ \\t\\(]*def[a-z\\-]* \\([a-z-!]+\\)/\\1/' --regex='/[ \\t\\(]*ns \\([a-z.]+\\)/\\1/'")))))
 
 (defun clojure-tags-navigate ()
   (interactive)
