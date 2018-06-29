@@ -53,7 +53,9 @@
         magit-discard
         magit-stage
         mark-whole-buffer
+        markdown-cycle
         markdown-exdent-or-delete
+        markdown-outdent-or-delete
         move-text-down
         move-text-up
         nameless-insert-name
@@ -105,6 +107,7 @@
         wdired-finish-edit
         wdired-next-line
         yaml-electric-backspace
+        yaml-electric-dash-and-dot
         yas-expand
         zygospore-toggle-delete-other-windows
         ))
