@@ -3,7 +3,7 @@
 (req-package ido
   :ensure t
   :bind (("C-x C-f" . ido-find-file))
-  :chords (("xb" . ido-switch-buffer))
+  :commands (ido-switch-buffer)
   :config
   (ido-mode 1)
   (ido-everywhere 1))

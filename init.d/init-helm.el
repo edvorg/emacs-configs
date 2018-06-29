@@ -2,7 +2,7 @@
 
 (req-package helm
   :ensure t
-  :chords ((";l" . helm-bookmarks))
+  :commands (helm-bookmarks)
   :bind (("C-x C-b" . helm-buffers-list)
          ("C-c y" . helm-show-kill-ring)
          ("C-x C-r" . helm-recentf)

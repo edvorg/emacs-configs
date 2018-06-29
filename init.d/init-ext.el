@@ -35,16 +35,6 @@
   :commands proced
   :config (setq-default proced-filter 'all))
 
-;; zoom frame
-
-(req-package zoom-frm
-  :ensure t
-  :commands zoom-in/out
-  :init (progn (define-key ctl-x-map [(control ?+)] 'zoom-in/out)
-			   (define-key ctl-x-map [(control ?-)] 'zoom-in/out)
-			   (define-key ctl-x-map [(control ?=)] 'zoom-in/out)
-			   (define-key ctl-x-map [(control ?0)] 'zoom-in/out)))
-
 ;; process management
 
 (req-package list-processes
@@ -78,7 +68,7 @@
 
 (req-package zygospore
   :ensure t
-  :chords ((";1" . zygospore-toggle-delete-other-windows)))
+  :commands (zygospore-toggle-delete-other-windows))
 
 ;; delete trailing whitespaces before saving some buffer
 
@@ -89,11 +79,6 @@
 (req-package find-temp-file
   :ensure t
   :bind ("C-x C-t" . find-temp-file))
-
-;; narrow region to other window
-
-(req-package narrow-indirect
-  :ensure t)
 
 ;; shit text left/right
 
@@ -148,7 +133,7 @@
 
 (req-package paradox
   :ensure t
-  :chords ((";p" . paradox-list-packages)))
+  :commands paradox-list-packages)
 
 ;; multiple cursors
 
@@ -196,17 +181,12 @@
 (req-package sudo-ext
   :ensure t)
 
-;; scratch persist
-
-(req-package hl-defined
-  :ensure t)
-
 (req-package scratch-ext
   :ensure t)
 
 (req-package scratch-persist
   :ensure t
-  :require (eldoc hl-defined scratch-ext)
+  :require (eldoc scratch-ext)
   :init (setq scratch-persist-file "~/Dropbox/emacs/scratch.el"))
 
 ;; indentation
@@ -258,7 +238,7 @@
 
 (req-package ace-window
   :ensure t
-  :chords ((";o" . ace-window))
+  :commands (ace-window)
   :bind (("C-x o" . ace-window)))
 
 ;; ace jump mode

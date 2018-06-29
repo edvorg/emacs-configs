@@ -29,10 +29,10 @@
 (req-package projectile
   :ensure t
   :require grizzl
+  :commands (projectile-find-file
+             projectile-find-dir)
   :bind (("C-x f" . projectile-find-file)
          ("C-x d" . projectile-find-dir))
-  :chords  (("xf" . projectile-find-file)
-            ("xd" . projectile-find-dir))
   :config
   (projectile-global-mode)
   (setq projectile-completion-system 'grizzl))

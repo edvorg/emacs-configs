@@ -1,12 +1,5 @@
 (require 'req-package)
 
-(req-package clojure-cheatsheet
-  :ensure t
-  :require (helm clojure-mode cider)
-  :commands clojure-cheatsheet
-  :init (progn (define-key clojure-mode-map (kbd "C-h j") 'clojure-cheatsheet)
-               (define-key cider-repl-mode-map (kbd "C-h j") 'clojure-cheatsheet)))
-
 (defun clojure-write-tags ()
   (when (or (eq 'clojure-mode major-mode)
             (eq 'clojurescript-mode major-mode)
@@ -33,16 +26,6 @@
   (setq tags-revert-without-query t)
   (setq tags-add-tables nil)
   (setq clojure-indent-style :align-arguments)
-  (put-clojure-indent 'ch/modify-column 1)
-  (put-clojure-indent 's/fdef 1)
-  (put-clojure-indent 'ch/add-columns 1)
-  (put-clojure-indent 'ch/add-foreign-key-constraint 1)
-  (put-clojure-indent 'ch/create-index 1)
-  (put-clojure-indent 'ch/create-table 1)
-  (put-clojure-indent 'ch/insert-data 1)
-  (put-clojure-indent 'ch/update-data 1)
-  (put-clojure-indent 'ch/add-unique-constraint 1)
-  (put-clojure-indent 'ch/add-foreign-key-constraint 1)
   (define-key clojure-mode-map (kbd "<f5>")
     (lambda (&rest args)
       (interactive)
@@ -55,10 +38,6 @@
                               (s-replace ".clj" "_test.clj")
                               (s-concat project-dir))))
             (find-file file-path)))))))
-
-(req-package clojure-mode-extra-font-locking
-  :ensure t
-  :require clojure-mode)
 
 (req-package cider
   :ensure t
@@ -73,16 +52,6 @@
   (setq nrepl-sync-request-timeout 60)
   (define-key cider-mode-map (kbd "C-c M-J") 'cider-jack-in-clojurescript)
   (define-key cider-mode-map (kbd "C-x c e") 'clojure-tags-navigate))
-
-(req-package helm-cider
-  :ensure t
-  :require cider helm
-  :config (helm-cider-mode t))
-
-(req-package slamhound
-  :ensure t
-  :require cider
-  :commands slamhound)
 
 (req-package clj-refactor
   :ensure t
@@ -103,12 +72,6 @@
   :ensure t
   :commands (4clojure-check-answers 4clojure-open-question))
 
-(req-package typed-clojure-mode
-  :ensure t
-  :require clojure-mode
-  :commands typed-clojure-mode
-  :init (add-hook-exec 'clojure-mode 'typed-clojure-mode))
-
 (req-package flycheck-clojure
   :ensure t
   :disabled t
@@ -126,12 +89,6 @@
   :ensure t
   :require (clojure-mode yasnippet)
   :config (clojure-snippets-initialize))
-
-(req-package align-cljlet
-  :ensure t
-  :require clojure-mode
-  :config
-  (define-key clojure-mode-map (kbd "C-M-<tab>") 'align-cljlet))
 
 (req-package cljsbuild-mode
   :ensure t

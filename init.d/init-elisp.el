@@ -17,8 +17,9 @@
 (req-package eldoc
   :ensure t
   :commands eldoc-mode
-  :init (progn (add-hook-exec 'emacs-lisp-mode 'eldoc-mode)
-			   (add-hook-exec 'lisp-interaction-mode 'eldoc-mode)))
+  :init
+  (add-hook-exec 'emacs-lisp-mode 'eldoc-mode)
+  (add-hook-exec 'lisp-interaction-mode 'eldoc-mode))
 
 (req-package lisp-mode
   :require flycheck

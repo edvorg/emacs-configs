@@ -8,7 +8,6 @@
 
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
                          ("marmalade" . "https://marmalade-repo.org/packages/")))
 
@@ -54,6 +53,10 @@
 
 ;; req-package
 
+(use-package use-package-chords
+  :ensure t
+  :config (key-chord-mode 1))
+
 (use-package req-package
   :ensure t
   :config (req-package--log-set-level 'debug))
@@ -73,3 +76,34 @@
   (load-dir-one my-init-dir)
   (req-package-finish)
   (funcall 'select-theme))
+
+(req-package key-chord
+  :force t
+  :ensure t
+  :chords (("qw" . kill-this-buffer)
+           ("qq" . kill-this-buffer)
+           (";2" . split-window-below)
+           (";3" . split-window-right)
+           (";4" . kill-buffer-and-window)
+           (";0" . delete-window)
+           (";n" . scroll-up-command)
+           (";h" . scroll-down-command)
+           (";/" . undo)
+           (";u" . "\C-u")
+           (";j" . "\C-n")
+           (";k" . "\C-p")
+           (";g" . "\C-g")
+           ("1e" . "\C-a")
+           ("2e" . "\C-a\t")
+           ("3e" . "\C-e")
+           ("4e" . "\C-e ")
+           (";1" . zygospore-toggle-delete-other-windows)
+           ("xf" . projectile-find-file)
+           ("xd" . projectile-find-dir)
+           (";l" . helm-bookmarks)
+           (";m" . magit-status)
+           ("xb" . ido-switch-buffer)
+           (";1" . zygospore-toggle-delete-other-windows)
+           (";p" . paradox-list-packages)
+           (";o" . ace-window))
+  :config (key-chord-mode 1))
