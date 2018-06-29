@@ -10,6 +10,8 @@
   :bind (:map dired-mode-map
               ("M-i" . helm-swoop)
               ("M-RET" . dired-find-file-other-window))
+  :init
+  (setq dired-recursive-deletes 'always)
   :config
   (add-hook-exec 'dired-mode (lambda ()
                                (diff-hl-dired-mode 1)
