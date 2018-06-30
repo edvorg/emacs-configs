@@ -12,17 +12,6 @@
   :ensure t
   :commands wgrep)
 
-;; in-project search
-
-(defun find-upper-vcs-root (from acc)
-  (let* ((UPPER (expand-file-name (concat from "/..")))
-		 (NEWACC (cond ((file-exists-p (concat from "/.svn")) from)
-					   ((file-exists-p (concat from "/.git")) from)
-					   (t acc))))
-	(if (equal from "/")
-		NEWACC
-	  (find-upper-vcs-root UPPER NEWACC))))
-
 (req-package grizzl
   :ensure t)
 

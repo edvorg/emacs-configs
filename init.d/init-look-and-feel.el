@@ -11,12 +11,6 @@
   :ensure t
   :config (progn (display-time-mode 1)))
 
-;; highlight number in code
-
-(req-package highlight-numbers
-  :ensure t
-  :config (add-hook-exec 'find-file (lambda () (highlight-numbers-mode 1))))
-
 ;; some very useful extension
 
 (req-package nyan-mode
@@ -226,7 +220,6 @@
 (req-package dash
   :ensure t
   :config
-  (dash-enable-font-lock)
-  (message "loaded"))
+  (dash-enable-font-lock))
 
 (provide 'init-look-and-feel)

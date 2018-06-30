@@ -42,7 +42,7 @@
 (req-package cider
   :ensure t
   :require (clojure-mode eldoc)
-  :commands cider-mode cider-jack-in-clojurescript
+  :commands cider-mode cider-jack-in-clojurescript clojure-tags-navigate
   :init
   (add-hook-exec 'clojure-mode #'cider-mode)
   (add-hook-exec 'cider-mode #'eldoc-mode)
