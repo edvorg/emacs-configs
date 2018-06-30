@@ -68,44 +68,15 @@
   :commands cljr-helm
   :init (define-key clojure-mode-map (kbd "M-RET") 'cljr-helm))
 
-(req-package 4clojure
-  :ensure t
-  :commands (4clojure-check-answers 4clojure-open-question))
-
-(req-package flycheck-clojure
-  :ensure t
-  :disabled t
-  :require (clojure-mode flycheck)
-  :config
-  (add-hook-exec 'clojure-mode
-    (lambda ()
-      ;; currently not working with cljs
-      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-typed)
-      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-kibit)
-      (add-to-list 'flycheck-disabled-checkers 'clojure-cider-eastwood)))
-  (flycheck-clojure-setup))
-
 (req-package clojure-snippets
   :ensure t
   :require (clojure-mode yasnippet)
   :config (clojure-snippets-initialize))
 
-(req-package cljsbuild-mode
-  :ensure t
-  :commands cljsbuild-start)
-
-(req-package kibit-helper
-  :ensure t
-  :commands kibit kibit-current-file
-  :bind (("C-x C-`" . kibit-accept-proposed-change)))
-
-(req-package sotclojure
-  :ensure t :disabled t)
-
 (defun reverse-destructure-form ()
   (interactive)
   (let* ((s (thread-last (buffer-substring (mark) (point))
-                         (format "
+              (format "
 (let [f (fn f [form]
      (cond
        (map? form)  (->> form
@@ -124,7 +95,7 @@
        :default     form))]
    (f '%s))
 "))))
-                         (cider--pprint-eval-form s)))
+    (cider--pprint-eval-form s)))
 
 (defun clojure-sort-map ()
   (interactive)
@@ -136,6 +107,6 @@
                                  (map? node) (into (sorted-map) node)
                                  :default node))))
 "))))
-                         (cider--pprint-eval-form s)))
+    (cider--pprint-eval-form s)))
 
 (provide 'init-clojure)
