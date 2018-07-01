@@ -280,20 +280,13 @@
 
 (req-package smartparens-config
   :ensure smartparens
-  :config (progn (smartparens-global-mode t)
-                 (add-hook-exec 'clojure-mode 'smartparens-strict-mode)
-                 (add-hook-exec 'emacs-lisp-mode 'smartparens-strict-mode)
-                 (add-hook-exec 'css-mode 'smartparens-strict-mode)
-                 (add-hook-exec 'rust-mode 'smartparens-strict-mode)
-                 (show-smartparens-global-mode t)
-                 (global-set-key (kbd "C-M-a") 'sp-beginning-of-sexp)
-                 (global-set-key (kbd "C-M-e") 'sp-end-of-sexp)
-                 (global-set-key (kbd "C-M-k") 'sp-kill-sexp)
-                 (global-set-key (kbd "C-M-k") 'sp-kill-sexp)
-                 (global-set-key (kbd "C-M-n") 'sp-forward-sexp)
-                 (global-set-key (kbd "C-M-p") 'sp-backward-sexp)
-                 (global-set-key (kbd "C-M-b") 'sp-up-sexp)
-                 (global-set-key (kbd "C-M-f") 'sp-down-sexp)))
+  :config
+  (smartparens-global-mode t)
+  (add-hook-exec 'clojure-mode 'smartparens-strict-mode)
+  (add-hook-exec 'emacs-lisp-mode 'smartparens-strict-mode)
+  (add-hook-exec 'css-mode 'smartparens-strict-mode)
+  (add-hook-exec 'rust-mode 'smartparens-strict-mode)
+  (show-smartparens-global-mode t))
 
 ;; auto reverting
 
@@ -303,15 +296,6 @@
                  (setq auto-revert-interval 0.5)
                  (setq auto-revert-verbose nil)
                  (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-tail-mode))))
-
-;; shrink/enlarge window
-
-(global-set-key (kbd "C-M-{") (lambda () (interactive) (shrink-window 10 1)))
-(global-set-key (kbd "C-M-}") (lambda () (interactive) (enlarge-window 10 1)))
-(global-set-key (kbd "C-M-?") (lambda () (interactive) (shrink-window 5 nil)))
-(global-set-key (kbd "C-M-\"") (lambda () (interactive) (enlarge-window 5 nil)))
-(global-set-key (kbd "C-M-]") (lambda () (interactive) (other-window 1)))
-(global-set-key (kbd "C-M-[") (lambda () (interactive) (other-window -1)))
 
 ;; expand region
 
@@ -373,9 +357,6 @@
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v" "C-c C-t" "C-c C-m" "C-x c"))
   (guide-key-mode 1))
-
-;; (req-package easy-kill
-;;   :config (global-set-key [remap kill-ring-save] 'easy-kill))
 
 (req-package podcaster
   :commands podcaster

@@ -211,7 +211,7 @@
   :require smartrep
   :config
   (global-diff-hl-mode 1)
-  (global-set-key (kbd "C-x v R") 'diff-hl-revert-hunk))
+  )
 
 (req-package nameless
   :ensure t
