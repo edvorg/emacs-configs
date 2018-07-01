@@ -284,6 +284,7 @@
   (smartparens-global-mode t)
   (add-hook-exec 'clojure-mode 'smartparens-strict-mode)
   (add-hook-exec 'emacs-lisp-mode 'smartparens-strict-mode)
+  (add-hook-exec 'lisp-interaction-mode 'smartparens-strict-mode)
   (add-hook-exec 'css-mode 'smartparens-strict-mode)
   (add-hook-exec 'rust-mode 'smartparens-strict-mode)
   (show-smartparens-global-mode t))
