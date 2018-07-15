@@ -1,32 +1,14 @@
 (require 'req-package)
 
-;; use igrep
-
-(req-package igrep
-  :ensure t
-  :commands igrep)
-
-;; use wgrep
-
-(req-package wgrep
-  :ensure t
-  :commands wgrep)
-
-(req-package grizzl
-  :ensure t)
-
 (req-package projectile
   :ensure t
-  :require grizzl
   :commands (projectile-find-file
              projectile-find-dir)
   :bind (("C-x f" . projectile-find-file)
          ("C-x d" . projectile-find-dir))
   :config
   (projectile-global-mode)
-  (setq projectile-completion-system 'grizzl))
-
-;; visual regexp
+  (setq projectile-completion-system 'ido))
 
 (req-package visual-regexp-steroids
   :ensure t)
@@ -40,8 +22,6 @@
          ;; :map esc-map
          ("C-M-r" . vr/isearch-backward)
          ("C-M-s" . vr/isearch-forward)))
-
-;; ignored folders
 
 (req-package grep
   :ensure t

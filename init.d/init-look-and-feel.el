@@ -149,8 +149,6 @@
 
 (advice-add 'load-theme :after #'load-theme-advice)
 
-;; anzu
-
 (req-package anzu
   :ensure t
   :require
@@ -158,29 +156,19 @@
   :config
   (global-anzu-mode 1))
 
-;; mode line tweaks
-
 (req-package simple
   :config
   (column-number-mode 1))
-
-;; toolbar
 
 (req-package tool-bar
   :config
   (tool-bar-mode -1))
 
-;; scroll bar
-
 (req-package scroll-bar
   :config
   (scroll-bar-mode -1))
 
-;; miscaleous tweeks
-
 (setq make-pointer-invisible nil)
-
-;; todo, fixme highlighting
 
 (req-package fic-mode
   :ensure t
@@ -200,8 +188,6 @@
   :commands rainbow-delimiters-mode
   :init
   (add-hook-exec 'clojure-mode (lambda () (rainbow-delimiters-mode 1))))
-
-;; diff highlight
 
 (req-package smartrep
   :ensure t)

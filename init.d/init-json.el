@@ -1,7 +1,5 @@
 (require 'req-package)
 
-;; json reformatter
-
 (req-package json-reformat
   :ensure t
   :commands json-reformat-region

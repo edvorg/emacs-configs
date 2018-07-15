@@ -10,10 +10,6 @@
   :init (progn (add-hook-exec 'sgml-mode 'emmet-mode)
                (add-hook-exec 'css-mode 'emmet-mode)))
 
-(req-package web-mode
-  :ensure t
-  :commands web-mode)
-
 (req-package scss-mode
   :ensure t
   :mode ("\\.scss\\'" . scss-mode))

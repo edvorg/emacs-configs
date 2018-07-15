@@ -1,65 +1,5 @@
 (require 'req-package)
 
-(req-package shift-number
-  :ensure t
-  :bind (("C-M-<up>" . shift-number-up)
-         ("C-M-<down>" . shift-number-down)))
-
-(req-package bool-flip
-  :ensure t
-  :bind (("C-M-^" . bool-flip-do-flip)))
-
-(req-package twittering-mode
-  :ensure t
-  :commands twit
-  :config
-  (setq twittering-icon-mode t)
-  (setq twittering-use-icon-storage t)
-  (load "~/Dropbox/emacs/twittering-custom.el" t)
-  (setq twittering-use-master-password t)
-  (twittering-enable-unread-status-notifier))
-
-(req-package mastodon
-  :ensure t
-  :commands mastodon
-  :init (setq mastodon-instance-url "https://mastodon.social"))
-
-(req-package multifiles
-  :ensure t
-  :bind ("C-!" . mf/mirror-region-in-multifile))
-
-;; proced
-
-(req-package proced
-  :ensure t
-  :commands proced
-  :config (setq-default proced-filter 'all))
-
-;; process management
-
-(req-package list-processes
-  :bind ("<f2>" . list-processes+))
-
-;; camcoder
-
-(req-package camcorder
-  :ensure t
-  :commands camcorder-record)
-
-;; edit server
-
-(req-package edit-server
-  :ensure t
-  :config (edit-server-start))
-
-;; emacs bugtracker
-
-(req-package debbugs
-  :ensure t
-  :commands debbugs)
-
-;; open recent files
-
 (req-package recentf
   :ensure t
   :config (recentf-mode 1))
@@ -94,8 +34,6 @@
   :config (progn (setq savekill-max-saved-items nil)
                  (load save-kill-file-name t)))
 
-;; google tanslate
-
 (req-package google-translate-smooth-ui
   :ensure google-translate
   :bind ("C-c t" . google-translate-smooth-translate))
@@ -103,8 +41,6 @@
 (req-package define-word
   :ensure t
   :bind ("C-c d" . define-word-at-point))
-
-;; swith off some warnings
 
 (req-package warnings
   :ensure t
@@ -117,13 +53,7 @@
   :bind ("M-x" . smex)
   :config (smex-initialize))
 
-;; googling
-
-(req-package google-this
-  :commands google-this
-  :ensure t)
-
-;; string edit
+;; unescaped string edit
 
 (req-package string-edit
   :ensure t
@@ -145,30 +75,6 @@
          ("C-c ." . mc/mark-all-like-this)
          ("C-M->" . mc/skip-to-next-like-this)
          ("C-M-<" . mc/skip-to-previous-like-this)))
-
-;; ant
-
-(req-package ant
-  :ensure t
-  :commands ant)
-
-;; sos
-
-(req-package sos
-  :ensure t
-  :commands sos)
-
-;; howdoi
-
-(req-package howdoi
-  :ensure t
-  :commands howdoi-query)
-
-;; swoop
-
-(req-package swoop
-  :ensure t
-  :commands swoop)
 
 ;; save history
 
@@ -323,18 +229,6 @@
   :ensure t
   :bind ("C-x r e" . rectangle-utils-extend-rectangle-to-end))
 
-(req-package prodigy
-  :ensure t
-  :commands prodigy)
-
-(req-package fireplace
-  :ensure t
-  :commands fireplace)
-
-(req-package neotree
-  :ensure t
-  :commands neotree)
-
 (req-package idle-highlight-mode
   :ensure t
   :require org-faces
@@ -358,18 +252,6 @@
   :config
   (setq guide-key/guide-key-sequence '("C-x r" "C-x 4" "C-x v" "C-x C-a" "C-c" "C-x" "C-c C-v" "C-c C-t" "C-c C-m" "C-x c"))
   (guide-key-mode 1))
-
-(req-package podcaster
-  :commands podcaster
-  :ensure t
-  :config (setq podcaster-feeds-urls '("http://feeds.cognitect.com/cognicast/feed.rss")))
-
-(req-package wotd
-  :ensure t
-  :commands wotd-all wotd-select)
-
-(req-package neotree
-  :bind ("C-c C-f C-d" . neotree-toggle))
 
 (req-package protobuf-mode
   :ensure t

@@ -16,18 +16,18 @@
   :commands turn-on-magit-gitflow
   :init (add-hook-exec 'magit-mode 'turn-on-magit-gitflow))
 
-(req-package gitconfig-mode
-  :ensure t)
+;; (req-package gitconfig-mode
+;;   :ensure t)
 
-(req-package gitignore-mode
-  :ensure t)
+;; (req-package gitignore-mode
+;;   :ensure t)
 
 (req-package git-messenger
   :ensure t
   :bind ("C-x v p" . git-messenger:popup-message))
 
-(req-package gitattributes-mode
-  :ensure t)
+;; (req-package gitattributes-mode
+;;   :ensure t)
 
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)

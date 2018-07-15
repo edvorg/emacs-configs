@@ -9,6 +9,12 @@
          ("C-x r l" . helm-bookmarks))
   :config (require 'helm-config))
 
+(req-package helm-flx
+  :ensure t
+  :config (helm-flx-mode +1)
+  (setq helm-flx-for-helm-find-files t
+        helm-flx-for-helm-locate t))
+
 (req-package ace-jump-helm-line
   :ensure t
   :commands ace-jump-helm-line
@@ -51,22 +57,6 @@
   :commands helm-descbinds
   :require helm)
 
-(req-package helm-package
-  :commands helm-package
-  :require helm)
-
-(req-package makefile-runner
-  :ensure t)
-
-(req-package helm-make
-  :ensure t
-  :commands helm-make
-  :require makefile-runner)
-
-(req-package wgrep-helm
-  :ensure t
-  :require (helm wgrep grep))
-
 (req-package helm-github-stars
   :ensure t
   :commands helm-github-stars
@@ -82,8 +72,5 @@
   :ensure t
   :commands helm-books
   :require helm)
-
-(req-package helm-org-rifle
-  :ensure t)
 
 (provide 'init-helm)

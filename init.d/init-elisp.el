@@ -10,10 +10,6 @@
   :config
   (emr-initialize))
 
-(req-package litable
-  :ensure t
-  :commands litable-mode)
-
 (req-package eldoc
   :ensure t
   :commands eldoc-mode
@@ -41,7 +37,6 @@
 
 (req-package overseer
   :ensure t
-  :require f
   :commands overseer-mode
   :init (add-hook-exec 'emacs-lisp-mode 'overseer-mode))
 
