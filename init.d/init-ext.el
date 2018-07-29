@@ -188,6 +188,7 @@
   :ensure smartparens
   :config
   (smartparens-global-mode t)
+  (add-hook-exec 'fennel-mode 'smartparens-strict-mode)
   (add-hook-exec 'clojure-mode 'smartparens-strict-mode)
   (add-hook-exec 'emacs-lisp-mode 'smartparens-strict-mode)
   (add-hook-exec 'lisp-interaction-mode 'smartparens-strict-mode)
