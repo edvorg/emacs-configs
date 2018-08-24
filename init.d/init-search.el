@@ -23,6 +23,9 @@
          ("C-M-r" . vr/isearch-backward)
          ("C-M-s" . vr/isearch-forward)))
 
+(req-package wgrep
+  :ensure t)
+
 (req-package grep
   :ensure t
   :defer 1
