@@ -16,4 +16,17 @@
                  (setq org-log-done 'note)
                  (define-key org-mode-map (kbd "C-M-\\") 'org-indent-region)))
 
+(req-package org-pomodoro
+  :ensure t
+  :commands org-pomodoro
+  :config
+  (add-hook
+   'org-pomodoro-finished-hook
+   (lambda ()
+     (shell-command "firefox-developer-edition https://duckduckgo.com/?q=cats&iax=images&ia=images")))
+  (add-hook
+   'org-pomodoro-break-finished-hook
+   (lambda ()
+     (async-shell-command "emacsclient -n ~/Work/mailin"))))
+
 (provide 'init-org)
