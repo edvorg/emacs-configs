@@ -23,10 +23,11 @@
   (add-hook
    'org-pomodoro-finished-hook
    (lambda ()
-     (shell-command "firefox-developer-edition https://duckduckgo.com/?q=cats&iax=images&ia=images")))
+     (shell-command "xdg-open 'https://duckduckgo.com/?q=cats&iax=images&ia=images'")))
   (add-hook
    'org-pomodoro-break-finished-hook
    (lambda ()
-     (async-shell-command "emacsclient -n ~/Work/mailin"))))
+     (async-shell-command "emacsclient -n ~/Work/mailin")))
+  :bind (("C-c p" . org-pomodoro)))
 
 (provide 'init-org)
