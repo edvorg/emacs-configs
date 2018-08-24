@@ -27,7 +27,7 @@
   (add-hook
    'org-pomodoro-break-finished-hook
    (lambda ()
-     (async-shell-command "emacsclient -n ~/Work/mailin")))
+     (async-shell-command "emacsclient -n ~/Work")))
   :bind (("C-c p" . org-pomodoro)))
 
 (provide 'init-org)
