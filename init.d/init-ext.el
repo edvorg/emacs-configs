@@ -258,4 +258,6 @@
   :ensure t
   :mode (("proto\\'" . protobuf-mode)))
 
+(setq visible-bell t)
+
 (provide 'init-ext)
