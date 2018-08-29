@@ -23,7 +23,7 @@
   (add-hook
    'org-pomodoro-finished-hook
    (lambda ()
-     (shell-command "xdg-open 'https://duckduckgo.com/?q=cats&iax=images&ia=images'")
+     (browse-url "'https://duckduckgo.com/?q=cats&iax=images&ia=images'")
      (shell-command "play ~/.emacs.d/pomodoro-stop.mp3")))
   (add-hook
    'org-pomodoro-break-finished-hook
