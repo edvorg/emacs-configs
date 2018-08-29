@@ -23,13 +23,13 @@
   (add-hook
    'org-pomodoro-finished-hook
    (lambda ()
-     (browse-url "'https://duckduckgo.com/?q=cats&iax=images&ia=images'")
-     (shell-command "play ~/.emacs.d/pomodoro-stop.mp3")))
+     (shell-command "play ~/.emacs.d/pomodoro-stop.mp3")
+     (browse-url "'https://duckduckgo.com/?q=cats&iax=images&ia=images'")))
   (add-hook
    'org-pomodoro-break-finished-hook
    (lambda ()
-     (async-shell-command "emacsclient -n ~/Work")
-     (shell-command "play ~/.emacs.d/pomodoro-start.mp3")))
+     (shell-command "play ~/.emacs.d/pomodoro-start.mp3")
+     (async-shell-command "emacsclient --no-wait ~/Work")))
   :bind (("C-c p" . org-pomodoro)))
 
 (provide 'init-org)
