@@ -259,5 +259,7 @@
   :mode (("proto\\'" . protobuf-mode)))
 
 (setq visible-bell t)
+(setq max-specpdl-size 10000)
+(setq max-lisp-eval-depth 10000)
 
 (provide 'init-ext)
