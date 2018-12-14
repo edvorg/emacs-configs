@@ -18,6 +18,6 @@
 
 (req-package shell-pop
   :ensure t
-  :bind ("M-\"" . shell-pop))
+  :bind ("M-|" . shell-pop))
 
 (provide 'init-bash)
