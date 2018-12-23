@@ -64,13 +64,6 @@
 
 ;; (normalize-faces (face-list))
 
-(req-package soothe-theme
-  :ensure t
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'soothe))
-
 (req-package gotham-theme
   :ensure t
   :require smart-mode-line
@@ -101,34 +94,12 @@
   :init
   (add-theme 'darktooth))
 
-(req-package jazz-theme
-  :ensure t
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'jazz))
-
 (req-package yoshi-theme
   :ensure t
   :require smart-mode-line
   :defer t
   :init
   (add-theme 'yoshi))
-
-(req-package plan9-theme
-  :ensure t
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'plan9))
-
-(req-package sublime-themes
-  :ensure t
-  :require smart-mode-line
-  :defer t
-  :init
-  (add-theme 'junio)
-  (add-theme 'wilson))
 
 (defun select-theme (&optional theme)
   (interactive)
@@ -169,11 +140,6 @@
   (scroll-bar-mode -1))
 
 (setq make-pointer-invisible nil)
-
-(req-package fic-mode
-  :ensure t
-  :config
-  (add-hook-exec 'prog-mode (lambda () (fic-mode 1))))
 
 (req-package rainbow-delimiters
   :ensure t

@@ -15,16 +15,4 @@
                                (diff-hl-dired-mode 1)
                                (setq dired-dwim-target t))))
 
-(req-package dired-launch
-  :ensure t
-  :require dired
-  :init
-  (setq dired-launch-default-launcher '("xdg-open"))
-  (dired-launch-enable))
-
-(req-package dired-details
-  :ensure t
-  :init (setq-default dired-details-hidden-string "- ")
-  :config (dired-details-install))
-
 (provide 'init-dired)

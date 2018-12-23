@@ -17,8 +17,4 @@
 (req-package css-mode
   :config (setq css-indent-offset 2))
 
-(req-package django-mode
-  :ensure t
-  :mode ("\\.djhtml\\'" . django-html-mode))
-
 (provide 'init-web)

@@ -14,7 +14,3 @@
 
 (req-package lsp-rust
   :commands lsp-rust-enable)
-
-(req-package toml-mode
-  :ensure t
-  :mode (("toml\\'" . toml-mode)))

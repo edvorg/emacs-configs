@@ -14,26 +14,6 @@
 
 (add-hook-exec 'before-save 'delete-trailing-whitespace)
 
-;; temp file
-
-(req-package find-temp-file
-  :ensure t
-  :bind ("C-x C-t" . find-temp-file))
-
-;; shit text left/right
-
-(req-package smart-shift
-  :ensure t
-  :bind (("C-{" . smart-shift-left)
-         ("C-}" . smart-shift-right)))
-
-;; save kill ring to disk
-
-(req-package savekill
-  :ensure t
-  :config (progn (setq savekill-max-saved-items nil)
-                 (load save-kill-file-name t)))
-
 (req-package google-translate-smooth-ui
   :ensure google-translate
   :bind ("C-c t" . google-translate-smooth-translate))
@@ -81,19 +61,6 @@
 (req-package savehist
   :ensure t
   :config (savehist-mode 1))
-
-;; sudo support
-
-(req-package sudo-ext
-  :ensure t)
-
-(req-package scratch-ext
-  :ensure t)
-
-(req-package scratch-persist
-  :ensure t
-  :require (eldoc scratch-ext)
-  :init (setq scratch-persist-file "~/Dropbox/emacs/scratch.el"))
 
 ;; indentation
 
@@ -176,12 +143,6 @@
   :bind (("M-n" . move-text-down)
          ("M-p" . move-text-up)))
 
-;; duplicate thing
-
-(req-package duplicate-thing
-  :ensure t
-  :bind ("M-c" . duplicate-thing))
-
 ;; smart parenthesis
 
 (req-package smartparens-config
@@ -211,18 +172,6 @@
   :ensure t
   :bind ("M-=" . er/expand-region)
   :init (eval-after-load 'dired '(define-key dired-mode-map (kbd "M-=") 'er/expand-region)))
-
-;; desc unbound keys
-
-(req-package unbound
-  :ensure t
-  :commands describe-unbound-keys)
-
-;; rotate
-
-(req-package rotate
-  :ensure t
-  :bind ("C-M-s-<return>" . rotate-layout))
 
 ;; rectangles
 

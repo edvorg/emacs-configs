@@ -1,15 +1,5 @@
 (require 'req-package)
 
-(req-package emr
-  :ensure t
-  :commands
-  emr-show-refactor-menu
-  :init
-  (progn (define-key emacs-lisp-mode-map (kbd "M-RET") 'emr-show-refactor-menu)
-         (define-key lisp-interaction-mode-map (kbd "M-RET") 'emr-show-refactor-menu))
-  :config
-  (emr-initialize))
-
 (req-package eldoc
   :ensure t
   :commands eldoc-mode
@@ -30,21 +20,12 @@
   :init (progn (add-hook-exec 'emacs-lisp-mode 'elisp-slime-nav-mode)
                (add-hook-exec 'lisp-interaction-mode 'elisp-slime-nav-mode)))
 
-(req-package ert-modeline
-  :ensure t
-  :commands ert-modeline-mode
-  :init (add-hook-exec 'emacs-lisp-mode 'ert-modeline-mode))
-
 (req-package overseer
   :ensure t
   :commands overseer-mode
   :init (add-hook-exec 'emacs-lisp-mode 'overseer-mode))
 
 (req-package el-mock
-  :ensure t
-  :require lisp-mode)
-
-(req-package ert-expectations
   :ensure t
   :require lisp-mode)
 

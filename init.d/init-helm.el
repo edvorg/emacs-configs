@@ -9,30 +9,16 @@
          ("C-x r l" . helm-bookmarks))
   :config (require 'helm-config))
 
-(req-package helm-flx
-  :ensure t
-  :config (helm-flx-mode +1)
-  (setq helm-flx-for-helm-find-files t
-        helm-flx-for-helm-locate t))
-
 (req-package ace-jump-helm-line
   :ensure t
   :commands ace-jump-helm-line
   :require helm
   :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
 
-(req-package helm-google
-  :ensure t
-  :commands helm-google)
-
 (req-package helm-proc
   :ensure t
   :commands helm-proc
   :require helm)
-
-(req-package helm-gitignore
-  :ensure t
-  :commands helm-gitignore)
 
 (req-package helm-company
   :ensure t
@@ -40,11 +26,6 @@
   :commands helm-company
   :config (progn (define-key company-mode-map (kbd "C-:") 'helm-company)
                  (define-key company-active-map (kbd "C-:") 'helm-company)))
-
-(req-package helm-helm-commands
-  :ensure t
-  :commands helm-helm-commands
-  :require helm)
 
 (req-package helm-swoop
   :ensure t
