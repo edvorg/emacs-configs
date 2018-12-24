@@ -31,20 +31,6 @@
 (require-package 'use-package)
 (require 'use-package)
 
-;; el-get
-
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require-package 'el-get)
-(require 'el-get)
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-(el-get 'sync)
-
-;; :el-get keyword for use-package
-
-(use-package use-package-el-get
-  :ensure t
-  :config (use-package-el-get-setup))
-
 ;; chords
 
 (use-package use-package-chords
