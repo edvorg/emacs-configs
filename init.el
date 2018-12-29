@@ -4,7 +4,7 @@
 
 ;; bootstrap utils
 
-(defconst my-custom-file "~/Dropbox/emacs/custom.el")
+(defconst my-custom-file "~/.emacs.d/custom.el")
 
 (setq custom-file my-custom-file)
 (setq package-enable-at-startup nil)
