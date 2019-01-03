@@ -3,7 +3,7 @@
 (defun setup-linux-font (frame)
   (condition-case-unless-debug e
       (progn
-        (add-to-list 'default-frame-alist '(font . "Source Code Pro Semibold 9"))
+        (add-to-list 'default-frame-alist '(font . "SauceCodePro Nerd Font Mono Semi-Bold 9"))
         (set-default-font "SauceCodePro Nerd Font Mono Semi-Bold 9" t))
     (error (message "can not load SourceCodePro font : %s" e))))
 
