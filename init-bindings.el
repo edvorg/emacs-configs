@@ -37,33 +37,30 @@
 (global-set-key (kbd "<double-wheel-right>") (lambda () (interactive) nil))
 (global-set-key (kbd "<wheel-right>") (lambda () (interactive) nil))
 
+(global-set-key (kbd "<f1>") 'zygospore-toggle-delete-other-windows)
+(global-set-key (kbd "<f2>") 'split-window-below)
+(global-set-key (kbd "<f3>") 'split-window-right)
+(global-set-key (kbd "<f10>") 'delete-window)
+
+(global-set-key (kbd "<f7>") 'projectile-find-file)
+(global-set-key (kbd "<f8>") 'projectile-find-dir)
+
 (req-package key-chord
   :force t
   :ensure t
   :chords (("qw" . kill-this-buffer)
            ("qq" . kill-this-buffer)
+           (";1" . zygospore-toggle-delete-other-windows)
            (";2" . split-window-below)
            (";3" . split-window-right)
            (";4" . kill-buffer-and-window)
            (";0" . delete-window)
-           (";n" . scroll-up-command)
-           (";h" . scroll-down-command)
-           (";/" . undo)
-           (";u" . "\C-u")
-           (";j" . "\C-n")
-           (";k" . "\C-p")
-           (";g" . "\C-g")
-           ("1e" . "\C-a")
-           ("2e" . "\C-a\t")
-           ("3e" . "\C-e")
-           ("4e" . "\C-e ")
-           (";1" . zygospore-toggle-delete-other-windows)
+
            ("xf" . projectile-find-file)
            ("xd" . projectile-find-dir)
            (";l" . helm-bookmarks)
            (";m" . magit-status)
            ("xb" . ido-switch-buffer)
-           (";1" . zygospore-toggle-delete-other-windows)
            (";p" . paradox-list-packages)
            (";o" . ace-window))
   :config (key-chord-mode 1))
