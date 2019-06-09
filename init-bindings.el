@@ -40,6 +40,7 @@
 (global-set-key (kbd "<f1>") 'zygospore-toggle-delete-other-windows)
 (global-set-key (kbd "<f2>") 'split-window-below)
 (global-set-key (kbd "<f3>") 'split-window-right)
+(global-set-key (kbd "<f4>") 'kill-buffer-and-window)
 (global-set-key (kbd "<f10>") 'delete-window)
 
 (global-set-key (kbd "<f7>") 'projectile-find-file)
