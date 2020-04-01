@@ -8,7 +8,8 @@
 
 (setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("gnu" . "https://elpa.gnu.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")))
+                         ("org" . "https://orgmode.org/elpa/")
+                         ("melpa" . "https://melpa.org/packages/")))
 
 (defconst my-init-dir "~/.emacs.d/init.d")
 

@@ -101,6 +101,13 @@
   :init
   (add-theme 'yoshi))
 
+(req-package plan9-theme
+  :ensure t
+  :require smart-mode-line
+  :defer t
+  :init
+  (add-theme 'plan9))
+
 (defun select-theme (&optional theme)
   (interactive)
     (let* ((themes-vec (vconcat my-random-themes))
